@@ -15,13 +15,13 @@ export default class ColorPicker extends Component {
   removeAllInlineStyles = (editorState) => {
     let contentState = editorState.getCurrentContent();
     ['BOLD', 'ITALIC', 'UNDERLINE', 'STRIKETHROUGH', 'CODE',
-    'FONTFAMILY', 'COLOR', 'BGCOLOR', 'FONTSIZE', 'SUPERSCRIPT', 'SUBSCRIPT'].forEach((style) => {
-      contentState = Modifier.removeInlineStyle(
+      'FONTFAMILY', 'COLOR', 'BGCOLOR', 'FONTSIZE', 'SUPERSCRIPT', 'SUBSCRIPT'].forEach((style) => {
+        contentState = Modifier.removeInlineStyle(
         contentState,
         editorState.getSelection(),
-        style
+        style,
       );
-    });
+      });
     return EditorState.push(editorState, contentState, 'change-inline-style');
   };
 

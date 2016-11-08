@@ -8,10 +8,10 @@ export default {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './js/playground/index',
+    './example/index',
   ],
   output: {
-    path: path.join(__dirname, '../static'),
+    path: path.join(__dirname, '/static'),
     filename: 'bundle.js',
     publicPath: '/static/',
   },
@@ -21,6 +21,15 @@ export default {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /immutable\.js$|draftjs-utils\.js$|draftjs-to-html\.js$|lodash\.js$/
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style',
+          'css?sourceMap',
+          'postcss',
+          'sass?sourceMap',
+        ],
       },
       {
         test: /\.css$/,
@@ -41,7 +50,7 @@ export default {
       allChunks: true,
     }),
     new HtmlWebpackPlugin({
-      template: './js/playground/index.html',
+      template: './example/index.html',
       inject: true,
     }),
     new webpack.HotModuleReplacementPlugin()

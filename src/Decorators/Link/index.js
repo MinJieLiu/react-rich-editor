@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { Entity } from 'draft-js';
 import './styles.css';
-import openlink from '../../../../images/openlink.svg';
+import openlink from '../../../static/images/openlink.svg';
 
 function findLinkEntities(contentBlock, callback) {
   contentBlock.findEntityRanges(
@@ -12,7 +12,7 @@ function findLinkEntities(contentBlock, callback) {
         Entity.get(entityKey).getType() === 'LINK'
       );
     },
-    callback
+    callback,
   );
 }
 

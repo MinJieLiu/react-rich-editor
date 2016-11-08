@@ -68,10 +68,10 @@ export default class FontSizeControl extends Component {
           {currentFontSize ?
             <span>{currentFontSize}</span>
           :
-            <img
-              src={icon}
-              role="presentation"
-            />
+          <img
+            src={icon}
+            role="presentation"
+          />
           }
           {
             fontSizes.map((size, index) =>
@@ -82,7 +82,7 @@ export default class FontSizeControl extends Component {
                 key={index}
               >
                 {size}
-              </DropdownOption>
+              </DropdownOption>,
             )
           }
         </Dropdown>

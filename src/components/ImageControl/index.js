@@ -51,7 +51,7 @@ export default class ImageControl extends Component {
     const newEditorState = AtomicBlockUtils.insertAtomicBlock(
       editorState,
       entityKey,
-      ' '
+      ' ',
     );
     onChange(newEditorState);
     this.toggleModal();
@@ -136,7 +136,7 @@ export default class ImageControl extends Component {
               <span
                 className={classNames(
                   'image-modal-header-label',
-                  { 'image-modal-header-label-highlighted': showImageUpload }
+                  { 'image-modal-header-label-highlighted': showImageUpload },
                 )}
               />
             </span>
@@ -151,7 +151,7 @@ export default class ImageControl extends Component {
             <span
               className={classNames(
                 'image-modal-header-label',
-                { 'image-modal-header-label-highlighted': !showImageUpload }
+                { 'image-modal-header-label-highlighted': !showImageUpload },
               )}
             />
           </span>
@@ -181,15 +181,15 @@ export default class ImageControl extends Component {
                 className="image-modal-upload-option-input"
               />
             </div> :
-              <div className="image-modal-url-section">
-                <input
-                  className="image-modal-url-input"
-                  placeholder="Enter url"
-                  onChange={this.updateImageSrc}
-                  onBlur={this.updateImageSrc}
-                  value={imgSrc}
-                />
-              </div>
+            <div className="image-modal-url-section">
+              <input
+                className="image-modal-url-input"
+                placeholder="Enter url"
+                onChange={this.updateImageSrc}
+                onBlur={this.updateImageSrc}
+                value={imgSrc}
+              />
+            </div>
         }
         <span className="image-modal-btn-section">
           <button

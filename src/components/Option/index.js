@@ -33,7 +33,7 @@ export default class Option extends Component {
           {
             [`option-active ${activeClassName}`]: active,
             'option-disabled': disabled,
-          }
+          },
         )}
         onClick={this.onClick}
       >

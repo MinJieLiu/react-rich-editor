@@ -146,10 +146,10 @@ export default class WysiwygEditor extends Component {
   };
 
   customBlockRenderMap = DefaultDraftBlockRenderMap.merge(new Map({
-      unstyled: {
-        element: 'p',
-      },
-    }));
+    unstyled: {
+      element: 'p',
+    },
+  }));
 
   handleKeyCommand = (command) => {
     const { editorState } = this.state;

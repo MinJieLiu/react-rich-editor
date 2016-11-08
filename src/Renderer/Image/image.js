@@ -31,7 +31,7 @@ export default class Image extends Component {
     const entityKey = block.getEntityAt(0);
     Entity.mergeData(
       entityKey,
-      { alignment }
+      { alignment },
     );
     this.setState({
       dummy: true,
@@ -87,7 +87,7 @@ export default class Image extends Component {
             'image-left': alignment === 'left',
             'image-right': alignment === 'right',
             'image-center': !alignment || alignment === 'none',
-          }
+          },
         )}
       >
         <span className="image-imagewrapper">

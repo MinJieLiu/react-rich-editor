@@ -63,7 +63,7 @@ export default class ColorPicker extends Component {
     const newState = toggleCustomInlineStyle(
       editorState,
       currentStyle,
-      `${currentStyle}-${color}`
+      `${currentStyle}-${color}`,
     );
     if (newState) {
       onChange(newState, true);
@@ -93,7 +93,7 @@ export default class ColorPicker extends Component {
           <span
             className={classNames(
               'colorpicker-modal-style-label',
-              { 'colorpicker-modal-style-label-active': currentStyle === 'color' }
+              { 'colorpicker-modal-style-label-active': currentStyle === 'color' },
             )}
             onClick={this.setCurrentStyleColor}
           >
@@ -102,7 +102,7 @@ export default class ColorPicker extends Component {
           <span
             className={classNames(
               'colorpicker-modal-style-label',
-              { 'colorpicker-modal-style-label-active': currentStyle === 'bgcolor' }
+              { 'colorpicker-modal-style-label-active': currentStyle === 'bgcolor' },
             )}
             onClick={this.setCurrentStyleBgcolor}
           >

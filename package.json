@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf lib",
     "build": "npm run clean && npm run build:webpack",
-    "start": "node config/server.dev.js",
+    "start": "babel-node config/server.dev.js",
     "lint": "eslint src --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -31,6 +31,7 @@
   "homepage": "https://github.com/MinJieLiu/react-rich-editor#readme",
   "devDependencies": {
     "autoprefixer": "^6.5.2",
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.7",
@@ -39,13 +40,14 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.25.0",
+    "debug": "^2.3.0",
     "draft-js": "^0.9.1",
     "draftjs-to-html": "^0.3.3",
     "draftjs-to-markdown": "0.0.1",
     "eslint": "^3.9.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.6.0",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",

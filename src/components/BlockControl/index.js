@@ -49,7 +49,7 @@ export default class BlockControl extends Component {
     const { editorState, onChange } = this.props;
     const newState = RichUtils.toggleBlockType(
       editorState,
-      blockType
+      blockType,
     );
     if (newState) {
       onChange(newState);

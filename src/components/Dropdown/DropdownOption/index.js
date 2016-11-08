@@ -61,10 +61,10 @@ export default class DropDownOption extends Component {
         className={classNames(
             'dropdownoption-default',
             className,
-            { [`dropdownoption-active ${activeClassName}`]: active,
-              [`dropdownoption-highlighted ${highlightedClassName}`]: highlighted,
-              [`dropdownoption-disabled ${disabledClassName}`]: disabled,
-            })
+          { [`dropdownoption-active ${activeClassName}`]: active,
+            [`dropdownoption-highlighted ${highlightedClassName}`]: highlighted,
+            [`dropdownoption-disabled ${disabledClassName}`]: disabled,
+          })
         }
         onMouseEnter={this.setHighlighted}
         onMouseLeave={this.resetHighlighted}

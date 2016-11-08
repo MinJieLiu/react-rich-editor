@@ -43,14 +43,14 @@ export default class InlineControl extends Component {
     const { editorState, onChange } = this.props;
     let newState = RichUtils.toggleInlineStyle(
       editorState,
-      style
+      style,
     );
     if (style === 'SUBSCRIPT' || style === 'SUPERSCRIPT') {
       const removeStyle = style === 'SUBSCRIPT' ? 'SUPERSCRIPT' : 'SUBSCRIPT';
       const contentState = Modifier.removeInlineStyle(
         newState.getCurrentContent(),
         newState.getSelection(),
-        removeStyle
+        removeStyle,
       );
       newState = EditorState.push(newState, contentState, 'change-inline-style');
     }
@@ -76,7 +76,7 @@ export default class InlineControl extends Component {
                 role="presentation"
                 src={config[style].icon}
               />
-            </Option>
+            </Option>,
           )
         }
       </div>

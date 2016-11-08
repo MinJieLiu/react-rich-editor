@@ -1,4 +1,4 @@
-$prefix-cls: dropdown !default;
+$prefix-cls: dropdown;
 
 .#{$prefix-cls} {
 
@@ -15,9 +15,11 @@ $prefix-cls: dropdown !default;
       box-shadow: 1px 1px 0px #BFBDBD;
       background-color: #FFFFFF;
     }
+
     &:focus {
       outline: none;
     }
+
     &:active {
       box-shadow: 1px 1px 0px #BFBDBD inset;
     }
@@ -67,7 +69,7 @@ $prefix-cls: dropdown !default;
   }
 
   &-optionwrapper:hover {
-    box-shadow: 1px 1px 0px #BFBDBD;
+    box-shadow: 1px 1px 0 #BFBDBD;
     background-color: #FFFFFF;
   }
 }

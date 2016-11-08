@@ -1,6 +1,7 @@
-$prefix-cls: list !default;
+$prefix-cls: fontsize;
 
 .#{$prefix-cls} {
+
   &-wrapper {
     display: flex;
     align-items: center;
@@ -8,13 +9,12 @@ $prefix-cls: list !default;
   }
 
   &-dropdown {
-    width: 50px;
-    z-index: 90;
+    min-width: 40px;
   }
 
-  &-dropdownOption {
-    height: 40px;
+  &-option {
     display: flex;
     justify-content: center;
   }
+
 }

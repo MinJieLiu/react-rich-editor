@@ -6,7 +6,6 @@ import { changeDepth, getSelectedBlocksType } from 'draftjs-utils';
 import { getFirstIcon } from '../../utils/toolbar';
 import { Dropdown, DropdownOption } from '../Dropdown';
 import Option from '../Option';
-import './styles.scss';
 
 export default class ListControl extends Component {
 

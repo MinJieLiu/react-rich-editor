@@ -1,4 +1,4 @@
-$prefix-cls: option !default;
+$prefix-cls: option;
 
 .#{$prefix-cls} {
 
@@ -34,5 +34,4 @@ $prefix-cls: option !default;
     opacity: 0.3;
     cursor: default;
   }
-
 }

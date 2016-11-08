@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { Entity, ContentBlock } from 'draft-js';
 import classNames from 'classnames';
-import './styles.scss';
 import Option from '../../components/Option';
 
 export default class Image extends Component {

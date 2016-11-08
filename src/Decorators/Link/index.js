@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react';
 import { Entity } from 'draft-js';
-import './styles.scss';
 import openlink from '../../../static/images/openlink.svg';
 
 function findLinkEntities(contentBlock, callback) {

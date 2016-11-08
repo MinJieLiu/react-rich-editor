@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import { EditorState, Modifier } from 'draft-js'; import Option from '../Option';
-import './styles.scss';
 
 export default class ColorPicker extends Component {
 

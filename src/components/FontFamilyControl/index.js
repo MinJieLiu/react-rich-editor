@@ -7,7 +7,6 @@ import {
   getSelectionCustomInlineStyle,
 } from 'draftjs-utils';
 import { Dropdown, DropdownOption } from '../Dropdown';
-import './styles.scss';
 
 export default class FontFamilyControl extends Component {
 

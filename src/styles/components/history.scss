@@ -1,4 +1,4 @@
-$prefix-cls: fontsize !default;
+$prefix-cls: history;
 
 .#{$prefix-cls} {
 
@@ -8,13 +8,15 @@ $prefix-cls: fontsize !default;
     margin-bottom: 6px;
   }
 
-  &-dropdown {
-    min-width: 40px;
-  }
-
-  &-option {
+  &-dropdownoption {
+    height: 40px;
     display: flex;
     justify-content: center;
   }
 
+  &-dropdown {
+    width: 50px;
+  }
+
 }
+

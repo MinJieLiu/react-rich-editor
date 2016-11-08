@@ -32,7 +32,6 @@ import HistoryControl from '../HistoryControl';
 import LinkDecorator from '../../decorators/Link';
 import ImageBlockRenderer from '../../renderer/Image';
 import defaultToolbar from '../../config/defaultToolbar';
-import './styles.scss';
 
 export default class WysiwygEditor extends Component {
 

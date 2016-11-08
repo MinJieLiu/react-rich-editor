@@ -5,7 +5,6 @@ import { getSelectedBlocksMetadata, setBlockData } from 'draftjs-utils';
 import Option from '../Option';
 import { Dropdown, DropdownOption } from '../Dropdown';
 import { getFirstIcon } from '../../utils/toolbar';
-import './styles.scss';
 
 export default class TextAlignControl extends Component {
 

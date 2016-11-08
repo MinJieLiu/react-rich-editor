@@ -1,7 +1,6 @@
 
 
 import React from 'react';
-import './styles.scss';
 
 // This is stateless component
 export default () =>

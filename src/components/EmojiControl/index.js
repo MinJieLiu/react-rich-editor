@@ -3,7 +3,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Modifier, EditorState } from 'draft-js';
 import Option from '../Option';
-import './styles.scss';
 
 export default class EmojiControl extends Component {
 

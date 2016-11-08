@@ -1,9 +1,7 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class DropDownOption extends Component {
+export default class DropdownOption extends Component {
 
   static propTypes = {
     children: PropTypes.any,
@@ -54,13 +52,15 @@ export default class DropDownOption extends Component {
       activeClassName,
       disabledClassName,
       highlightedClassName,
-     } = this.props;
+    } = this.props;
+
     return (
       <li
         className={classNames(
-            'dropdownoption-default',
-            className,
-          { [`dropdownoption-active ${activeClassName}`]: active,
+          'dropdownoption-default',
+          className,
+          {
+            [`dropdownoption-active ${activeClassName}`]: active,
             [`dropdownoption-highlighted ${highlightedClassName}`]: highlighted,
             [`dropdownoption-disabled ${disabledClassName}`]: disabled,
           })

@@ -1,5 +1,3 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import {
   Editor,
@@ -176,7 +174,7 @@ export default class WysiwygEditor extends Component {
       editorMouseDown,
       toolBarMouseDown,
       toolbar,
-     } = this.state;
+    } = this.state;
     const {
       toolbarOnFocus,
       toolbarClassName,
@@ -271,8 +269,8 @@ export default class WysiwygEditor extends Component {
                 config={history}
               />}
             </div>
-          :
-          undefined
+            :
+            undefined
         }
         <div
           className={`editor-main ${editorClassName}`}

@@ -24,9 +24,9 @@ import subscript from '../../static/images/subscript.svg';
 import superscript from '../../static/images/superscript.svg';
 
 /**
-* This is default toolbar configuration,
-* whatever user passes in toolbar property is deeply merged with this to over-ride defaults.
-*/
+ * This is default toolbar configuration,
+ * whatever user passes in toolbar property is deeply merged with this to over-ride defaults.
+ */
 export default {
   options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'emoji', 'image', 'remove', 'history'],
   inline: {

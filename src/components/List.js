@@ -1,11 +1,10 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import { RichUtils } from 'draft-js';
 import { changeDepth, getSelectedBlocksType } from 'draftjs-utils';
 import { getFirstIcon } from '../utils/toolbar';
-import { Dropdown, DropdownOption } from './Dropdown';
 import Option from './Option';
+import Dropdown from './Dropdown';
+import DropdownOption from './DropdownOption';
 
 export default class List extends Component {
 

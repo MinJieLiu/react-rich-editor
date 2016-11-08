@@ -1,10 +1,9 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import { getSelectedBlocksMetadata, setBlockData } from 'draftjs-utils';
 import Option from './Option';
-import { Dropdown, DropdownOption } from './Dropdown';
 import { getFirstIcon } from '../utils/toolbar';
+import Dropdown from './Dropdown';
+import DropdownOption from './DropdownOption';
 
 export default class TextAlign extends Component {
 

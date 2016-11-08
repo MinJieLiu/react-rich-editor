@@ -1,5 +1,3 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import { Entity, AtomicBlockUtils } from 'draft-js';
 import classNames from 'classnames';
@@ -163,8 +161,8 @@ export default class Image extends Component {
                 onDragOver={this.stopPropagationPreventDefault}
                 onDrop={this.onImageDrop}
                 className={classNames(
-                'image-modal-upload-option',
-                { 'image-modal-upload-option-highlighted': dragEnter })}
+                  'image-modal-upload-option',
+                  { 'image-modal-upload-option-highlighted': dragEnter })}
               >
                 <label
                   htmlFor="file"

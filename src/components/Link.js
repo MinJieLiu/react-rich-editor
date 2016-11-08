@@ -1,5 +1,3 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import { Entity, RichUtils, EditorState, Modifier } from 'draft-js';
 import {
@@ -9,7 +7,8 @@ import {
 } from 'draftjs-utils';
 import { getFirstIcon } from '../utils/toolbar';
 import Option from './Option';
-import { Dropdown, DropdownOption } from './Dropdown';
+import Dropdown from './Dropdown';
+import DropdownOption from './DropdownOption';
 
 export default class Link extends Component {
 
@@ -236,5 +235,4 @@ export default class Link extends Component {
     }
     return this.renderInFlatList(showModal, currentEntity, config);
   }
-
 }

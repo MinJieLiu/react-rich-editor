@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
-import DropdownOption from './DropdownOption';
 
-class Dropdown extends Component {
+export default class Dropdown extends Component {
 
   static propTypes = {
     children: PropTypes.any,
@@ -97,23 +96,17 @@ class Dropdown extends Component {
           >
             {
               React.Children.map(options, (option, index) => {
-                const temp = option && React.cloneElement(
+                return option && React.cloneElement(
                     option, {
                       onSelect: this.onChange,
                       highlighted: highlighted === index,
                       setHighlighted: this.setHighlighted,
                       index,
                     });
-                return temp;
               })
             }
           </ul> : undefined}
       </div>
     );
   }
-}
-
-export default {
-  Dropdown,
-  DropdownOption,
 }

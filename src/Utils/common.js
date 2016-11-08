@@ -1,8 +1,6 @@
-
-
 /**
-* Utility function to execute callback for eack key->value pair.
-*/
+ * Utility function to execute callback for eack key->value pair.
+ */
 export function forEach(obj, callback) {
   if (obj) {
     for (const key in obj) { // eslint-disable-line no-restricted-syntax
@@ -14,8 +12,8 @@ export function forEach(obj, callback) {
 }
 
 /**
-* The function returns true if the string passed to it has no content.
-*/
+ * The function returns true if the string passed to it has no content.
+ */
 export function isEmptyString(str) {
   if (str === undefined || str === null || str.length === 0 || str.trim().length === 0) {
     return true;
@@ -24,9 +22,9 @@ export function isEmptyString(str) {
 }
 
 /**
-* The function will return true for simple javascript object,
-* which is not any other built in type like Array.
-*/
+ * The function will return true for simple javascript object,
+ * which is not any other built in type like Array.
+ */
 export function isMap(obj) {
   return Object.prototype.toString.call(obj) === '[object Object]';
 }

@@ -1,12 +1,11 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import {
   fontFamilies,
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
 } from 'draftjs-utils';
-import { Dropdown, DropdownOption } from './Dropdown';
+import Dropdown from './Dropdown';
+import DropdownOption from './DropdownOption';
 
 export default class FontFamily extends Component {
 
@@ -33,8 +32,7 @@ export default class FontFamily extends Component {
     if (properties.editorState &&
       this.props.editorState !== properties.editorState) {
       this.setState({
-        currentFontFamily:
-          getSelectionCustomInlineStyle(properties.editorState, ['FONTFAMILY']).FONTFAMILY,
+        currentFontFamily: getSelectionCustomInlineStyle(properties.editorState, ['FONTFAMILY']).FONTFAMILY,
       });
     }
   }

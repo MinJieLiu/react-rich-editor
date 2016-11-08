@@ -1,11 +1,10 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import { getSelectionInlineStyle } from 'draftjs-utils';
 import { RichUtils, EditorState, Modifier } from 'draft-js';
 import { getFirstIcon } from '../utils/toolbar';
 import Option from './Option';
-import { Dropdown, DropdownOption } from './Dropdown';
+import Dropdown from './Dropdown';
+import DropdownOption from './DropdownOption';
 
 export default class Inline extends Component {
 
@@ -62,20 +61,20 @@ export default class Inline extends Component {
       <div className={`inline-wrapper ${config.className}`}>
         {
           config.options
-          .map((style, index) =>
-            <Option
-              key={index}
-              value={style.toUpperCase()}
-              onClick={this.toggleInlineStyle}
-              className={config[style].className}
-              active={currentStyles[style.toUpperCase()] === true}
-            >
-              <img
-                role="presentation"
-                src={config[style].icon}
-              />
-            </Option>,
-          )
+            .map((style, index) =>
+              <Option
+                key={index}
+                value={style.toUpperCase()}
+                onClick={this.toggleInlineStyle}
+                className={config[style].className}
+                active={currentStyles[style.toUpperCase()] === true}
+              >
+                <img
+                  role="presentation"
+                  src={config[style].icon}
+                />
+              </Option>,
+            )
         }
       </div>
     );
@@ -93,19 +92,19 @@ export default class Inline extends Component {
         />
         {
           config.options
-          .map((style, index) =>
-            <DropdownOption
-              key={index}
-              value={style.toUpperCase()}
-              className={`inline-dropdownoption ${config[style].className}`}
-              active={currentStyles[style.toUpperCase()] === true}
-            >
-              <img
-                src={config[style].icon}
-                role="presentation"
-              />
-            </DropdownOption>)
-          }
+            .map((style, index) =>
+              <DropdownOption
+                key={index}
+                value={style.toUpperCase()}
+                className={`inline-dropdownoption ${config[style].className}`}
+                active={currentStyles[style.toUpperCase()] === true}
+              >
+                <img
+                  src={config[style].icon}
+                  role="presentation"
+                />
+              </DropdownOption>)
+        }
       </Dropdown>
     );
   }

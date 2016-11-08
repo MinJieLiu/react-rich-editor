@@ -1,5 +1,3 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import { Modifier, EditorState } from 'draft-js';
 import Option from './Option';

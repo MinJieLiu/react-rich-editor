@@ -1,10 +1,9 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import { EditorState } from 'draft-js';
 import { getFirstIcon } from '../utils/toolbar';
 import Option from './Option';
-import { Dropdown, DropdownOption } from './Dropdown';
+import Dropdown from './Dropdown';
+import DropdownOption from './DropdownOption';
 
 export default class History extends Component {
 

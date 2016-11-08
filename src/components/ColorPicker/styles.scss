@@ -1,0 +1,78 @@
+$prefix-cls: colorpicker !default;
+
+.#{$prefix-cls} {
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    position: relative;
+  }
+
+  &-modal {
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+    height: 175px;
+    border: 1px solid #F1F1F1;
+    padding: 15px;
+    border-radius: 2px;
+    z-index: 100;
+    background: white;
+    box-shadow: 3px 3px 5px #BFBDBD;
+  }
+
+  &-modal-header {
+    display: flex;
+    padding-bottom: 5px;
+  }
+
+  &-modal-style-label {
+    font-size: 15px;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 10px 5px;
+  }
+
+  &-modal-style-label-active {
+    border-bottom: 2px solid #0a66b7;
+  }
+
+  &-modal-options {
+    margin: 5px auto;
+    display: flex;
+    width: 170px;
+    flex-wrap: wrap;
+  }
+
+  &-cube {
+    width: 22px;
+    height: 22px;
+    border: 1px solid #F1F1F1;
+  }
+
+  &-option {
+    margin: 3px;
+    padding: 0;
+    min-height: 20px;
+    border: none;
+    width: 22px;
+    height: 22px;
+    box-shadow: 1px 2px 1px #BFBDBD inset;
+
+    &:hover {
+      box-shadow: 1px 2px 1px #BFBDBD;
+    }
+
+    &:active {
+      box-shadow: -1px -2px 1px #BFBDBD;
+    }
+  }
+
+  &-active {
+    box-shadow: 0 0 2px 2px #BFBDBD;
+  }
+}

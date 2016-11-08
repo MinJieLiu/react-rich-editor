@@ -1,0 +1,22 @@
+$prefix-cls: history !default;
+
+.#{$prefix-cls} {
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  &-dropdownoption {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-dropdown {
+    width: 50px;
+  }
+
+}
+

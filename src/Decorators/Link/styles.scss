@@ -1,0 +1,21 @@
+$prefix-cls: link-decorator !default;
+
+.#{$prefix-cls} {
+
+  &-wrapper {
+    position: relative;
+  }
+
+  &-link {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  &-icon {
+    position: absolute;
+    left: 40%;
+    top: 0;
+    cursor: pointer;
+    background-color: white;
+  }
+}

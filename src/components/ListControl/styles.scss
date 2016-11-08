@@ -1,0 +1,20 @@
+$prefix-cls: list !default;
+
+.#{$prefix-cls} {
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  &-dropdown {
+    width: 50px;
+    z-index: 90;
+  }
+
+  &-dropdownOption {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}

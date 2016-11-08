@@ -5,7 +5,7 @@ import { EditorState } from 'draft-js';
 import { getFirstIcon } from '../../utils/toolbar';
 import Option from '../Option';
 import { Dropdown, DropdownOption } from '../Dropdown';
-import './styles.css';
+import './styles.scss';
 
 export default class HistoryControl extends Component {
 

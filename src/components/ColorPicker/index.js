@@ -6,7 +6,7 @@ import {
   getSelectionCustomInlineStyle,
 } from 'draftjs-utils';
 import Option from '../Option';
-import './styles.css';
+import './styles.scss';
 
 export default class ColorPicker extends Component {
 

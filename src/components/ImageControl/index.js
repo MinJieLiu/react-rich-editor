@@ -5,7 +5,7 @@ import { Entity, AtomicBlockUtils } from 'draft-js';
 import classNames from 'classnames';
 import Option from '../Option';
 import Spinner from '../Spinner';
-import './styles.css';
+import './styles.scss';
 
 export default class ImageControl extends Component {
 

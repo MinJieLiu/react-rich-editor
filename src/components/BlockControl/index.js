@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { getSelectedBlocksType } from 'draftjs-utils';
 import { RichUtils } from 'draft-js';
 import { Dropdown, DropdownOption } from '../Dropdown';
-import './styles.css';
+import './styles.scss';
 
 export default class BlockControl extends Component {
 

@@ -1,0 +1,38 @@
+$prefix-cls: option !default;
+
+.#{$prefix-cls} {
+
+  &-wrapper {
+    border: 1px solid #F1F1F1;
+    padding: 5px;
+    width: 25px;
+    height: 20px;
+    border-radius: 2px;
+    margin: 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    text-transform: capitalize;
+
+    &:hover {
+      box-shadow: 1px 1px 0px #BFBDBD;
+    }
+
+    &:active {
+      box-shadow: 1px 1px 0px #BFBDBD inset;
+    }
+
+  }
+
+  &-active {
+    box-shadow: 1px 1px 0px #BFBDBD inset;
+  }
+
+  &-disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+}

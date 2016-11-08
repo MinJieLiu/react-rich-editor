@@ -1,32 +1,44 @@
-.text-align-wrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 6px;
+$prefix-cls: text-align !default;
+
+.#{$prefix-cls} {
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  &-dropdown {
+    width: 50px;
+    z-index: 90;
+  }
+
+  &-dropdownOption {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
 }
-.text-align-dropdown {
-  width: 50px;
-  z-index: 90;
-}
-.text-align-dropdownOption {
-  height: 40px;
-  display: flex;
-  justify-content: center;
-}
+
 .right-aligned-block {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
+
 .left-aligned-block {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
+
 .center-aligned-block {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .justify-aligned-block {
   display: flex;
   flex-direction: row;

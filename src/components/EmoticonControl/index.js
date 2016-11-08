@@ -3,7 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Modifier, EditorState } from 'draft-js';
 import Option from '../Option';
-import './styles.css';
+import './styles.scss';
 
 export default class ImageControl extends Component {
 

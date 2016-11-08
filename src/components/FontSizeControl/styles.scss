@@ -1,0 +1,20 @@
+$prefix-cls: fontsize !default;
+
+.#{$prefix-cls} {
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  &-dropdown {
+    min-width: 40px;
+  }
+
+  &-option {
+    display: flex;
+    justify-content: center;
+  }
+
+}

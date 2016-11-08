@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
-import './styles.css';
+import './styles.scss';
 
 export default class Dropdown extends Component {
 

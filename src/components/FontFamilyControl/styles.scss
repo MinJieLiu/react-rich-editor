@@ -1,0 +1,30 @@
+$prefix-cls: fontfamily !default;
+
+.#{$prefix-cls} {
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  &-dropdown {
+    width: 115px;
+  }
+
+  &-option {
+  }
+
+  &-placeholder {
+    white-space: nowrap;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-optionwrapper {
+    width: 140px;
+  }
+
+}
+

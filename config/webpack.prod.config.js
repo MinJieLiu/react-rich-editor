@@ -6,7 +6,7 @@ import autoprefixer from 'autoprefixer';
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './js/src/index',
+    './src/index',
   ],
   output: {
     path: path.join(__dirname, '../lib'),
@@ -30,7 +30,7 @@ module.exports = {
         warnings: false,
       },
     }),
-    new ExtractTextPlugin('react-draft-wysiwyg.css', {
+    new ExtractTextPlugin('react-rich-editor.css', {
       allChunks: true,
     }),
   ],
@@ -43,6 +43,15 @@ module.exports = {
           'style-loader',
           'css-loader?modules&importLoaders=1&localIdentName=[local]!postcss-loader'
         ),
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style',
+          'css?sourceMap',
+          'postcss',
+          'sass?sourceMap',
+        ],
       },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
       {

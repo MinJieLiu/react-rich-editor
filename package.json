@@ -40,7 +40,6 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.25.0",
-    "debug": "^2.3.0",
     "draft-js": "^0.9.1",
     "draftjs-to-html": "^0.3.3",
     "draftjs-to-markdown": "0.0.1",

@@ -1,5 +1,3 @@
-/* @flow */
-
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import draftToHtml from 'draftjs-to-html';
@@ -10,7 +8,7 @@ import {
   ContentState,
 } from 'draft-js';
 import { Editor } from '../src';
-import styles from './styles.css';
+import './styles.css';
 
 const contentBlocks = convertFromHTML('<p>Lorem ipsum ' +
   'dolor sit amet, consectetur adipiscing elit. Mauris tortor felis, volutpat sit amet ' +
@@ -29,17 +27,17 @@ const rawContentState = convertToRaw(contentState);
 
 class Playground extends Component {
 
-  state: any = {
+  state = {
     editorContent: undefined,
   };
 
-  onEditorChange: Function = (editorContent) => {
+  onEditorChange = (editorContent) => {
     this.setState({
       editorContent,
     });
   };
 
-  imageUploadCallBack: Function = file => new Promise(
+  imageUploadCallBack = file => new Promise(
     (resolve, reject) => {
       const xhr = new XMLHttpRequest(); // eslint-disable-line no-undef
       xhr.open('POST', 'http://plan.v2.zhinanmao.com/common/uploadImg');
@@ -112,4 +110,4 @@ class Playground extends Component {
   }
 }
 
-ReactDOM.render(<Playground />, document.getElementById('app')); // eslint-disable-line no-undef
+ReactDOM.render(<Playground />, document.getElementById('app'));

@@ -87,7 +87,7 @@ export default class List extends Component {
   renderInFlatList(currentBlockType, config) {
     const { options, unordered, ordered, indent, outdent, className } = config;
     return (
-      <div className={`list-wrapper ${className}`}>
+      <div className={`tool-item list-wrapper ${className}`}>
         {options.indexOf('unordered') >= 0 && <Option
           value="unordered-list-item"
           onClick={this.toggleBlockType}

@@ -58,7 +58,7 @@ export default class Inline extends Component {
 
   renderInFlatList(currentStyles, config) {
     return (
-      <div className={`inline-wrapper ${config.className}`}>
+      <div className={`tool-item inline-wrapper ${config.className}`}>
         {
           config.options
             .map((style, index) =>

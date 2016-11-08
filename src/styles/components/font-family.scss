@@ -3,23 +3,21 @@ $prefix-cls: fontfamily;
 .#{$prefix-cls} {
 
   &-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 6px;
   }
 
   &-dropdown {
-    width: 115px;
+    width: 120px;
   }
 
   &-option {
   }
 
   &-placeholder {
-    white-space: nowrap;
+    display: inline-block;
     max-width: 90px;
-    overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &-optionwrapper {

@@ -163,7 +163,7 @@ export default class Link extends Component {
   renderInFlatList(showModal, currentEntity, config) {
     const { options, link, unlink, className } = config;
     return (
-      <div className={`link-wrapper ${className}`}>
+      <div className={`tool-item link-wrapper ${className}`}>
         {options.indexOf('link') >= 0 && <Option
           value="unordered-list-item"
           className={link.className}
@@ -193,7 +193,7 @@ export default class Link extends Component {
   renderInDropDown(showModal, currentEntity, config) {
     const { options, link, unlink, className } = config;
     return (
-      <div className="link-wrapper" onClick={this.hideLinkModal}>
+      <div className="tool-item link-wrapper" onClick={this.hideLinkModal}>
         <Dropdown
           className={`link-dropdown ${className}`}
           onChange={this.toggleInlineStyle}

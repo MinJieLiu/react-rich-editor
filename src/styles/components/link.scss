@@ -3,9 +3,6 @@ $prefix-cls: link;
 .#{$prefix-cls} {
 
   &-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 6px;
     position: relative;
   }
 
@@ -14,9 +11,6 @@ $prefix-cls: link;
   }
 
   &-dropdownOption {
-    height: 40px;
-    display: flex;
-    justify-content: center;
   }
 
   &-dropdownPlaceholder {

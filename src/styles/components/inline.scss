@@ -3,8 +3,6 @@ $prefix-cls: inline;
 .#{$prefix-cls} {
 
   &-wrapper {
-    display: flex;
-    margin-bottom: 6px;
   }
 
   &-dropdown {
@@ -12,9 +10,6 @@ $prefix-cls: inline;
   }
 
   &-dropdownoption {
-    height: 40px;
-    display: flex;
-    justify-content: center;
   }
 
 }

@@ -3,31 +3,28 @@ $prefix-cls: option;
 .#{$prefix-cls} {
 
   &-wrapper {
-    border: 1px solid #F1F1F1;
-    padding: 5px;
-    width: 25px;
-    height: 20px;
-    border-radius: 2px;
-    margin: 0 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 8px;
+    width: 100%;
+    height: 100%;
+    line-height: 36px;
+    text-align: center;
+    user-select: none;
     cursor: pointer;
-    background: white;
-    text-transform: capitalize;
 
     &:hover {
-      box-shadow: 1px 1px 0px #BFBDBD;
+      background-color: #ebebeb;
     }
 
     &:active {
-      box-shadow: 1px 1px 0px #BFBDBD inset;
+      background: #d6d6d6;
     }
 
   }
 
   &-active {
-    box-shadow: 1px 1px 0px #BFBDBD inset;
+    background: #d6d6d6;
   }
 
   &-disabled {

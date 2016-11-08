@@ -3,9 +3,6 @@ $prefix-cls: image;
 .#{$prefix-cls} {
 
   &-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 6px;
     position: relative;
   }
 

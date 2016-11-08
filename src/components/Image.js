@@ -216,7 +216,7 @@ export default class Image extends Component {
     const { config: { icon, className } } = this.props;
     const { showModal } = this.state;
     return (
-      <div className="image-wrapper">
+      <div className="tool-item image-wrapper">
         <Option
           className={className}
           value="unordered-list-item"

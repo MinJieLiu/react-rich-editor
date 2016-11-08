@@ -55,7 +55,7 @@ export default class FontFamily extends Component {
     currentFontFamily =
       currentFontFamily && currentFontFamily.substring(11, currentFontFamily.length);
     return (
-      <div className="fontfamily-wrapper">
+      <div className="tool-item fontfamily-wrapper">
         <Dropdown
           className={`fontfamily-dropdown ${className}`}
           onChange={this.toggleFontFamily}

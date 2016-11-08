@@ -3,15 +3,9 @@ $prefix-cls: history;
 .#{$prefix-cls} {
 
   &-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 6px;
   }
 
   &-dropdownoption {
-    height: 40px;
-    display: flex;
-    justify-content: center;
   }
 
   &-dropdown {

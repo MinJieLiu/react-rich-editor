@@ -31,7 +31,7 @@ export default class Remove extends Component {
   render() {
     const { config: { icon, className } } = this.props;
     return (
-      <div className="remove-wrapper">
+      <div className="tool-item remove-wrapper">
         <Option
           className={className}
           onClick={this.removeInlineStyles}

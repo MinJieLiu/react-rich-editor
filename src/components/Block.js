@@ -65,7 +65,7 @@ export default class Block extends Component {
     const currentLabel = currentBlockData && currentBlockData[0] && currentBlockData[0].label;
     const { config: { className } } = this.props;
     return (
-      <div className="block-wrapper">
+      <div className="tool-item block-wrapper">
         <Dropdown
           className={`block-dropdown ${className}`}
           onChange={this.toggleBlockType}

@@ -75,7 +75,7 @@ export default class Dropdown extends Component {
       <div
         tabIndex="0"
         onKeyDown={this.onKeyDown}
-        className={`dropdown-wrapper ${className}`}
+        className={`tool-item dropdown-wrapper ${className}`}
         onMouseLeave={this.collapse}
       >
         <a

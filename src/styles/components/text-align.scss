@@ -3,9 +3,6 @@ $prefix-cls: text-align;
 .#{$prefix-cls} {
 
   &-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 6px;
   }
 
   &-dropdown {
@@ -14,9 +11,6 @@ $prefix-cls: text-align;
   }
 
   &-dropdownOption {
-    height: 40px;
-    display: flex;
-    justify-content: center;
   }
 
 }

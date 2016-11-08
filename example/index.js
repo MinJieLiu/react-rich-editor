@@ -8,18 +8,13 @@ import {
   ContentState,
 } from 'draft-js';
 import { Editor } from '../src';
-import './styles.css';
+import './styles.scss';
 
-const contentBlocks = convertFromHTML('<p>Lorem ipsum ' +
-  'dolor sit amet, consectetur adipiscing elit. Mauris tortor felis, volutpat sit amet ' +
-  'maximus nec, tempus auctor diam. Nunc odio elit,  ' +
-  'commodo quis dolor in, sagittis scelerisque nibh. ' +
-  'Suspendisse consequat, sapien sit amet pulvinar  ' +
-  'tristique, augue ante dapibus nulla, eget gravida ' +
-  'turpis est sit amet nulla. Vestibulum lacinia mollis  ' +
-  'accumsan. Vivamus porta cursus libero vitae mattis. ' +
-  'In gravida bibendum orci, id faucibus felis molestie ac.  ' +
-  'Etiam vel elit cursus, scelerisque dui quis, auctor risus.</p>');
+const contentBlocks = convertFromHTML(
+  `<p>长忆西湖。尽日凭阑楼上望：三三两两钓鱼舟，岛屿正清秋。
+    笛声依约芦花里，白鸟成行忽惊起。别来闲整钓鱼竿，思入水云寒。
+  </p>`
+);
 
 const contentState = ContentState.createFromBlockArray(contentBlocks);
 
@@ -64,7 +59,7 @@ class Playground extends Component {
     return (
       <div className="playground-root">
         <div className="playground-label">
-          Toolbar is alwasy <sup>visible</sup>
+          React Rich Text Editor
         </div>
         <div className="playground-editorSection">
           <div className="playground-editorWrapper">
@@ -97,11 +92,11 @@ class Playground extends Component {
             />
           </div>
           <textarea
-            className="playground-content no-focus"
+            className="playground-content"
             value={draftToHtml(editorContent)}
           />
           <textarea
-            className="playground-content no-focus"
+            className="playground-content"
             value={draftToMarkdown(editorContent)}
           />
         </div>

@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { getSelectedBlocksType } from 'draftjs-utils';
 import { RichUtils } from 'draft-js';
-import { Dropdown, DropdownOption } from '../Dropdown';
+import { Dropdown, DropdownOption } from './Dropdown';
 
-export default class BlockControl extends Component {
+export default class Block extends Component {
 
   static propTypes = {
     onChange: PropTypes.func.isRequired,

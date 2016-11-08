@@ -6,9 +6,9 @@ import {
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
 } from 'draftjs-utils';
-import { Dropdown, DropdownOption } from '../Dropdown';
+import { Dropdown, DropdownOption } from './Dropdown';
 
-export default class FontFamilyControl extends Component {
+export default class FontFamily extends Component {
 
   static propTypes = {
     onChange: PropTypes.func.isRequired,

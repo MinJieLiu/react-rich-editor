@@ -3,10 +3,10 @@
 import React, { Component, PropTypes } from 'react';
 import { Entity, AtomicBlockUtils } from 'draft-js';
 import classNames from 'classnames';
-import Option from '../Option';
-import Spinner from '../Spinner';
+import Option from './Option';
+import Spinner from './Spinner';
 
-export default class ImageControl extends Component {
+export default class Image extends Component {
 
   static propTypes = {
     editorState: PropTypes.object.isRequired,

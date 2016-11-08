@@ -2,11 +2,11 @@
 
 import React, { Component, PropTypes } from 'react';
 import { getSelectedBlocksMetadata, setBlockData } from 'draftjs-utils';
-import Option from '../Option';
-import { Dropdown, DropdownOption } from '../Dropdown';
-import { getFirstIcon } from '../../utils/toolbar';
+import Option from './Option';
+import { Dropdown, DropdownOption } from './Dropdown';
+import { getFirstIcon } from '../utils/toolbar';
 
-export default class TextAlignControl extends Component {
+export default class TextAlign extends Component {
 
   static propTypes = {
     editorState: PropTypes.object.isRequired,

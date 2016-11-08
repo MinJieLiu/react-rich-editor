@@ -1,9 +1,9 @@
 
 
 import React, { Component, PropTypes } from 'react';
-import { EditorState, Modifier } from 'draft-js'; import Option from '../Option';
+import { EditorState, Modifier } from 'draft-js'; import Option from './Option';
 
-export default class ColorPicker extends Component {
+export default class Remove extends Component {
 
   static propTypes = {
     onChange: PropTypes.func.isRequired,

@@ -15,23 +15,23 @@ import {
   customStyleMap,
 } from 'draftjs-utils';
 import { Map } from 'immutable';
-import blockStyleFn from '../../utils/BlockStyle';
-import { mergeRecursive } from '../../utils/toolbar';
-import InlineControl from '../InlineControl';
-import BlockControl from '../BlockControl';
-import FontSizeControl from '../FontSizeControl';
-import FontFamilyControl from '../FontFamilyControl';
-import ListControl from '../ListControl';
-import TextAlignControl from '../TextAlignControl';
-import ColorPicker from '../ColorPicker';
-import RemoveControl from '../RemoveControl';
-import LinkControl from '../LinkControl';
-import EmojiControl from '../EmojiControl';
-import ImageControl from '../ImageControl';
-import HistoryControl from '../HistoryControl';
-import LinkDecorator from '../../decorators/Link';
-import ImageBlockRenderer from '../../renderer/Image';
-import defaultToolbar from '../../config/defaultToolbar';
+import blockStyleFn from '../utils/BlockStyle';
+import { mergeRecursive } from '../utils/toolbar';
+import InlineControl from './Inline';
+import BlockControl from './Block';
+import FontSizeControl from './FontSize';
+import FontFamilyControl from './FontFamily';
+import ListControl from './List';
+import TextAlignControl from './TextAlign';
+import ColorPicker from './ColorPicker';
+import RemoveControl from './Remove';
+import LinkControl from './Link';
+import EmojiControl from './Emoji';
+import ImageControl from './Image';
+import HistoryControl from './History';
+import LinkDecorator from '../decorators/Link';
+import ImageBlockRenderer from '../renderer/Image';
+import defaultToolbar from '../config/defaultToolbar';
 
 export default class WysiwygEditor extends Component {
 

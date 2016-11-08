@@ -7,11 +7,11 @@ import {
   getEntityRange,
   getSelectionEntity,
 } from 'draftjs-utils';
-import { getFirstIcon } from '../../utils/toolbar';
-import Option from '../Option';
-import { Dropdown, DropdownOption } from '../Dropdown';
+import { getFirstIcon } from '../utils/toolbar';
+import Option from './Option';
+import { Dropdown, DropdownOption } from './Dropdown';
 
-export default class LinkControl extends Component {
+export default class Link extends Component {
 
   static propTypes = {
     editorState: PropTypes.object.isRequired,

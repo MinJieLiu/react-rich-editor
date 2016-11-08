@@ -2,9 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import { Modifier, EditorState } from 'draft-js';
-import Option from '../Option';
+import Option from './Option';
 
-export default class ImageControl extends Component {
+export default class Emoji extends Component {
 
   static propTypes = {
     editorState: PropTypes.object.isRequired,
@@ -88,5 +88,3 @@ export default class ImageControl extends Component {
     );
   }
 }
-
-// todo: unit test cases

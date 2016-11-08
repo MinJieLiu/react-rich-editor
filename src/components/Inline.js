@@ -3,11 +3,11 @@
 import React, { Component, PropTypes } from 'react';
 import { getSelectionInlineStyle } from 'draftjs-utils';
 import { RichUtils, EditorState, Modifier } from 'draft-js';
-import { getFirstIcon } from '../../utils/toolbar';
-import Option from '../Option';
-import { Dropdown, DropdownOption } from '../Dropdown';
+import { getFirstIcon } from '../utils/toolbar';
+import Option from './Option';
+import { Dropdown, DropdownOption } from './Dropdown';
 
-export default class InlineControl extends Component {
+export default class Inline extends Component {
 
   static propTypes = {
     onChange: PropTypes.func.isRequired,
@@ -119,6 +119,3 @@ export default class InlineControl extends Component {
     return this.renderInFlatList(currentStyles, config);
   }
 }
-
-// todo: move all controls to separate folder controls
-// make subscript less low

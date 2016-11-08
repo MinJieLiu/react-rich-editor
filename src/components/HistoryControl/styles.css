@@ -1,0 +1,13 @@
+.history-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.history-dropdownoption {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+.history-dropdown {
+  width: 50px;
+}

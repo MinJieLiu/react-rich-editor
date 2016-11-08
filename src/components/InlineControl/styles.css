@@ -1,0 +1,12 @@
+.inline-wrapper {
+  display: flex;
+  margin-bottom: 6px;
+}
+.inline-dropdown {
+  width: 50px;
+}
+.inline-dropdownoption {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}

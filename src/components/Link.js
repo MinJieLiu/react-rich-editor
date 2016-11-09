@@ -20,8 +20,8 @@ export default class Link extends Component {
 
   state = {
     showModal: false,
-    linkTarget: '',
     linkTitle: '',
+    linkTarget: '',
   };
 
   componentWillMount() {
@@ -63,15 +63,15 @@ export default class Link extends Component {
     });
   };
 
-  updateLinkTitle = (event) => {
+  updateLinkTitle = (e) => {
     this.setState({
-      linkTitle: event.target.value,
+      linkTitle: e.target.value,
     });
   };
 
-  updateLinkTarget = (event) => {
+  updateLinkTarget = (e) => {
     this.setState({
-      linkTarget: event.target.value,
+      linkTarget: e.target.value,
     });
   };
 
@@ -127,35 +127,37 @@ export default class Link extends Component {
         className="editor-modal link-modal"
         onClick={this.stopPropagation}
       >
-        <span className="link-modal-label">Link Title</span>
-        <input
-          className="link-modal-input"
-          onChange={this.updateLinkTitle}
-          onBlur={this.updateLinkTitle}
-          value={linkTitle}
-        />
-        <span className="link-modal-label">Link Target</span>
-        <input
-          className="link-modal-input"
-          onChange={this.updateLinkTarget}
-          onBlur={this.updateLinkTarget}
-          value={linkTarget}
-        />
-        <span className="link-modal-buttonsection">
+        <div className="link-modal-item">
+          <span className="link-modal-label">链接</span>
+          <input
+            className="link-modal-input"
+            onChange={this.updateLinkTitle}
+            value={linkTitle}
+          />
+        </div>
+        <div className="link-modal-item">
+          <span className="link-modal-label">目标</span>
+          <input
+            className="link-modal-input"
+            onChange={this.updateLinkTarget}
+            value={linkTarget}
+          />
+        </div>
+        <div className="link-modal-button-section">
           <button
-            className="link-modal-btn"
+            className="editor-button-primary"
             onClick={this.addLink}
             disabled={!linkTarget || !linkTitle}
           >
-            Add
+            插入
           </button>
           <button
-            className="link-modal-btn"
+            className="editor-button-default"
             onClick={this.toggleLinkModal}
           >
-            Cancel
+            取消
           </button>
-        </span>
+        </div>
       </div>
     );
   }

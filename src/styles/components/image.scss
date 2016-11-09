@@ -1,3 +1,5 @@
+@import "./variables";
+
 $prefix-cls: image;
 
 .#{$prefix-cls} {
@@ -7,49 +9,54 @@ $prefix-cls: image;
   }
 
   &-modal {
+    height: auto;
   }
 
   &-modal-header {
-    font-size: 15px;
-    margin: 10px 0;
-    display: flex;
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    box-shadow: $editor-box-shadow;
+  }
+
+  &-modal-content {
+    padding: 15px;
   }
 
   &-modal-header-option {
+    display: inline-block;
+    padding: 10px;
     width: 50%;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 2px solid transparent;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    user-select: none;
+
+    &:hover {
+      background-color: $editor-hover-color;
+    }
+
+    &:active {
+      background-color: $editor-active-color;
+    }
   }
 
-  &-modal-header-label {
-    width: 80px;
-    background: #f1f1f1;
-    border: 1px solid #f1f1f1;
-    margin-top: 5px;
-  }
-
-  &-modal-header-label-highlighted {
-    background: #6EB8D4;
-    border-bottom: 2px solid #0a66b7;
+  &-modal-header-option-highlighted {
+    border-bottom: 2px solid #666;
   }
 
   &-modal-upload-option {
-    height: 75px;
+    margin-bottom: 10px;
     width: 100%;
+    height: 80px;
     color: gray;
-    cursor: pointer;
-    display: flex;
-    border: none;
     font-size: 15px;
-    align-items: center;
-    justify-content: center;
     background-color: #f1f1f1;
+    border: none;
     outline: 2px dashed gray;
     outline-offset: -10px;
-    margin: 10px 0;
+    cursor: pointer;
   }
 
   &-modal-upload-option-highlighted {
@@ -57,12 +64,10 @@ $prefix-cls: image;
   }
 
   &-modal-upload-option-label {
+    display: block;
+    text-align: center;
+    line-height: 80px;
     cursor: pointer;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   &-modal-upload-option-input {
@@ -93,35 +98,9 @@ $prefix-cls: image;
   }
 
   &-modal-btn-section {
-    margin: 10px auto 0;
-  }
-
-  &-modal-btn {
-    margin-left: 10px;
-    width: 75px;
-    height: 30px;
-    border: 1px solid #F1F1F1;
-    border-radius: 2px;
-    cursor: pointer;
-    background: white;
-    text-transform: capitalize;
-
-    &:hover {
-      box-shadow: 1px 1px 0px #BFBDBD;
-    }
-
-    &:active {
-      box-shadow: 1px 1px 0px #BFBDBD inset;
-    }
-
-    &:focus {
-      outline: none !important;
-    }
-
-    &:disabled {
-      background: #ece9e9;
-    }
-
+    margin-top: 15px;
+    width: 100%;
+    text-align: right;
   }
 
   &-modal-spinner {

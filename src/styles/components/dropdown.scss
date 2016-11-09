@@ -1,3 +1,5 @@
+@import "./variables";
+
 $prefix-cls: dropdown;
 
 @mixin arrow() {
@@ -24,15 +26,15 @@ $prefix-cls: dropdown;
     user-select: none;
 
     &:hover {
-      background-color: #ebebeb;
+      background-color: $editor-hover-color;
     }
 
     &:focus {
-      background: #d6d6d6;
+      background: $editor-active-color;
     }
 
     &:active {
-      background: #d6d6d6;
+      background: $editor-active-color;
     }
   }
 
@@ -62,7 +64,7 @@ $prefix-cls: dropdown;
     padding: 0;
     width: 100%;
     background: white;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+    box-shadow: $editor-box-shadow;
     z-index: 100;
   }
 }

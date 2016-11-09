@@ -1,3 +1,5 @@
+@import "./variables";
+
 $prefix-cls: dropdownoption;
 
 .#{$prefix-cls} {
@@ -6,16 +8,16 @@ $prefix-cls: dropdownoption;
     padding: 12px 18px;
 
     &:active {
-      background: #d6d6d6;
+      background: $editor-active-color;
     }
   }
 
   &-highlighted {
-    background: #ebebeb;
+    background: $editor-hover-color;
   }
 
   &-active {
-    background: #d6d6d6;
+    background: $editor-active-color;
   }
 
   &-disabled {

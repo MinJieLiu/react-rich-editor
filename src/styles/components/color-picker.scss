@@ -1,3 +1,5 @@
+@import "./variables";
+
 $prefix-cls: colorpicker;
 
 .#{$prefix-cls} {
@@ -6,21 +8,34 @@ $prefix-cls: colorpicker;
   }
 
   &-modal {
+    width: 210px;
+    height: auto;
   }
 
   &-modal-header {
     display: block;
     margin-bottom: 10px;
     width: 100%;
+    box-shadow: $editor-box-shadow;
   }
 
   &-modal-style-label {
     display: inline-block;
-    padding: 0 10px 5px;
+    padding: 10px;
     width: 50%;
     font-size: 15px;
     text-align: center;
+    border-bottom: 2px solid transparent;
     cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      background-color: $editor-hover-color;
+    }
+
+    &:active {
+      background-color: $editor-active-color;
+    }
   }
 
   &-modal-style-label-active {
@@ -28,34 +43,27 @@ $prefix-cls: colorpicker;
   }
 
   &-modal-options {
-    margin: 5px auto;
-    width: 100%;
-  }
-
-  &-cube {
-    width: 22px;
-    height: 22px;
+    display: block;
+    overflow: hidden;
   }
 
   &-option {
-    margin: 3px;
+    float: left;
     padding: 0;
-    min-height: 20px;
-    width: 22px;
-    height: 22px;
-    border: 0;
-    box-shadow: 1px 2px 1px #BFBDBD inset;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 
     &:hover {
-      box-shadow: 1px 2px 1px #BFBDBD;
+      box-shadow: 0 0 2px black inset;
     }
 
     &:active {
-      box-shadow: -1px -2px 1px #BFBDBD;
+      box-shadow: 0 0 2px black inset;
     }
   }
 
-  &-active {
-    box-shadow: 0 0 2px 2px #BFBDBD;
+  &-option-active {
+    box-shadow: 0 0 2px black inset;
   }
 }

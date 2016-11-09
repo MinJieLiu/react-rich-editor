@@ -67,12 +67,13 @@ export default class ColorPicker extends Component {
     if (newState) {
       onChange(newState, true);
     }
+    this.toggleModal();
   };
 
   toggleModal = () => {
-    const showModal = !this.state.showModal;
+    const showModal = this.state.showModal;
     this.setState({
-      showModal,
+      showModal: !showModal,
     });
   };
 
@@ -83,6 +84,7 @@ export default class ColorPicker extends Component {
   renderModal = () => {
     const { currentColor, currentBgColor, currentStyle } = this.state;
     const currentSelectedColor = (currentStyle === 'color') ? currentColor : currentBgColor;
+
     return (
       <div
         className="editor-modal colorpicker-modal"
@@ -96,7 +98,7 @@ export default class ColorPicker extends Component {
             )}
             onClick={this.setCurrentStyleColor}
           >
-            Text
+            文本
           </span>
           <span
             className={classNames(
@@ -105,25 +107,22 @@ export default class ColorPicker extends Component {
             )}
             onClick={this.setCurrentStyleBgcolor}
           >
-            Background
+            背景
           </span>
         </span>
         <span className="colorpicker-modal-options">
           {
             colors.map((color, index) =>
-              <Option
-                value={color}
+              <span
                 key={index}
-                className="colorpicker-option"
-                activeClassName="colorpicker-option-active"
-                active={currentSelectedColor === `${currentStyle}-${color}`}
-                onClick={this.toggleColor}
-              >
-                <span
-                  style={{ backgroundColor: color }}
-                  className="colorpicker-cube"
-                />
-              </Option>)
+                className={classNames('colorpicker-option', {
+                  'colorpicker-option-active': currentSelectedColor === `${currentStyle}-${color}`,
+                })}
+                onClick={() => {
+                  this.toggleColor(color);
+                }}
+                style={{ backgroundColor: color }}
+              />)
           }
         </span>
       </div>

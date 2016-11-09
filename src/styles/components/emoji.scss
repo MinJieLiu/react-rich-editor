@@ -1,3 +1,5 @@
+@import "./variables";
+
 $prefix-cls: emoji;
 
 .#{$prefix-cls} {
@@ -7,17 +9,21 @@ $prefix-cls: emoji;
   }
 
   &-modal {
+    padding: 15px;
+    width: 250px;
   }
 
   &-icon {
-    margin: 2.5px;
+    float: left;
+    margin: 2px;
     height: 24px;
     width: 24px;
-    cursor: pointer;
     font-size: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
 }

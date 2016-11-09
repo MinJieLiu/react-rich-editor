@@ -127,82 +127,78 @@ export default class Image extends Component {
           {uploadCallback ?
             <span
               onClick={this.showImageUploadOption}
-              className="image-modal-header-option"
+              className={classNames(
+                'image-modal-header-option',
+                { 'image-modal-header-option-highlighted': showImageUpload },
+              )}
             >
-              <span>File Upload</span>
-              <span
-                className={classNames(
-                  'image-modal-header-label',
-                  { 'image-modal-header-label-highlighted': showImageUpload },
-                )}
-              />
+              <span>文件上传</span>
             </span>
             :
             undefined
           }
           <span
             onClick={this.showImageURLOption}
-            className="image-modal-header-option"
+            className={classNames(
+              'image-modal-header-option',
+              { 'image-modal-header-option-highlighted': !showImageUpload },
+            )}
           >
-            <span>URL</span>
-            <span
-              className={classNames(
-                'image-modal-header-label',
-                { 'image-modal-header-label-highlighted': !showImageUpload },
-              )}
-            />
+            <span>链接</span>
           </span>
         </div>
-        {
-          showImageUpload && uploadCallback ?
-            <div>
-              <div
-                onDragEnter={this.stopPropagationPreventDefault}
-                onDragOver={this.stopPropagationPreventDefault}
-                onDrop={this.onImageDrop}
-                className={classNames(
-                  'image-modal-upload-option',
-                  { 'image-modal-upload-option-highlighted': dragEnter })}
-              >
-                <label
-                  htmlFor="file"
-                  className="image-modal-upload-option-label"
+        <div className="image-modal-content">
+          {
+            showImageUpload && uploadCallback ?
+              <div>
+                <div
+                  onDragEnter={this.stopPropagationPreventDefault}
+                  onDragOver={this.stopPropagationPreventDefault}
+                  onDrop={this.onImageDrop}
+                  className={classNames(
+                    'image-modal-upload-option',
+                    { 'image-modal-upload-option-highlighted': dragEnter })}
                 >
-                  Drop the file or click to upload
-                </label>
+                  <label
+                    htmlFor="file"
+                    className="image-modal-upload-option-label"
+                  >
+                    点击或将文件拖到这里
+                  </label>
+                </div>
+                <input
+                  type="file"
+                  id="file"
+                  onChange={this.selectImage}
+                  className="image-modal-upload-option-input"
+                />
+              </div> :
+              <div className="image-modal-url-section">
+                <input
+                  className="image-modal-url-input"
+                  placeholder="Enter url"
+                  onChange={this.updateImageSrc}
+                  onBlur={this.updateImageSrc}
+                  value={imgSrc}
+                />
               </div>
-              <input
-                type="file"
-                id="file"
-                onChange={this.selectImage}
-                className="image-modal-upload-option-input"
-              />
-            </div> :
-            <div className="image-modal-url-section">
-              <input
-                className="image-modal-url-input"
-                placeholder="Enter url"
-                onChange={this.updateImageSrc}
-                onBlur={this.updateImageSrc}
-                value={imgSrc}
-              />
-            </div>
-        }
-        <span className="image-modal-btn-section">
-          <button
-            className="image-modal-btn"
-            onClick={this.addImage}
-            disabled={!imgSrc}
-          >
-            Add
-          </button>
-          <button
-            className="image-modal-btn"
-            onClick={this.toggleModal}
-          >
-            Cancel
-          </button>
-        </span>
+          }
+          <div className="image-modal-btn-section">
+            <button
+              className="editor-button-primary"
+              onClick={this.addImage}
+              disabled={!imgSrc}
+            >
+              添加
+            </button>
+            <button
+              className="editor-button-default"
+              onClick={this.toggleModal}
+            >
+              取消
+            </button>
+          </div>
+        </div>
         {showImageLoading ?
           <div className="image-modal-spinner">
             <Spinner />

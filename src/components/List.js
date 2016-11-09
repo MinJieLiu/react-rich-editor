@@ -136,7 +136,7 @@ export default class List extends Component {
     const { options, className } = config;
     return (
       <Dropdown
-        className={`list-dropdown ${className}`}
+        className={`tool-item list-dropdown ${className}`}
         onChange={this.onDropdownChange}
       >
         <img

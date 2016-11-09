@@ -120,7 +120,7 @@ export default class Image extends Component {
     const { config: { uploadCallback } } = this.props;
     return (
       <div
-        className="image-modal"
+        className="editor-modal image-modal"
         onClick={this.stopPropagation}
       >
         <div className="image-modal-header">

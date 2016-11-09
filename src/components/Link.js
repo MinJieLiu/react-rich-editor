@@ -124,7 +124,7 @@ export default class Link extends Component {
     const { linkTitle, linkTarget } = this.state;
     return (
       <div
-        className="link-modal"
+        className="editor-modal link-modal"
         onClick={this.stopPropagation}
       >
         <span className="link-modal-label">Link Title</span>

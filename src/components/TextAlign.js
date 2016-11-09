@@ -39,7 +39,7 @@ export default class TextAlign extends Component {
     const { currentTextAlignment } = this.state;
     const { options, left, center, right, justify, className } = config;
     return (
-      <div className={`text-align-wrapper ${className}`}>
+      <div className={`tool-item text-align-wrapper ${className}`}>
         {options.indexOf('left') >= 0 && <Option
           value="left"
           className={left.className}
@@ -93,7 +93,7 @@ export default class TextAlign extends Component {
     const { options, left, center, right, justify, className } = config;
     return (
       <Dropdown
-        className={`text-align-dropdown ${className}`}
+        className={`tool-item text-align-dropdown ${className}`}
         onChange={this.addBlockAlignmentData}
       >
         <img

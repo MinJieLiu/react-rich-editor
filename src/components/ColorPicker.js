@@ -85,7 +85,7 @@ export default class ColorPicker extends Component {
     const currentSelectedColor = (currentStyle === 'color') ? currentColor : currentBgColor;
     return (
       <div
-        className="colorpicker-modal"
+        className="editor-modal colorpicker-modal"
         onClick={this.stopPropagation}
       >
         <span className="colorpicker-modal-header">

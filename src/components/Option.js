@@ -25,7 +25,7 @@ export default class Option extends Component {
     return (
       <div
         className={classNames(
-          'tool-item option-wrapper',
+          'option-wrapper',
           className,
           {
             [`option-active ${activeClassName}`]: active,

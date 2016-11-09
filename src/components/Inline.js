@@ -83,7 +83,7 @@ export default class Inline extends Component {
   renderInDropDown(currentStyles, config) {
     return (
       <Dropdown
-        className={`inline-dropdown ${config.className}`}
+        className={`tool-item inline-dropdown ${config.className}`}
         onChange={this.toggleInlineStyle}
       >
         <img

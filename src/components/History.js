@@ -58,7 +58,7 @@ export default class History extends Component {
     const { options, undo, redo, className } = config;
     return (
       <Dropdown
-        className={`history-dropdown ${className}`}
+        className={`tool-item history-dropdown ${className}`}
         onChange={this.toggleInlineStyle}
       >
         <img
@@ -92,7 +92,7 @@ export default class History extends Component {
   renderInFlatList(undoDisabled, redoDisabled, config) {
     const { options, undo, redo, className } = config;
     return (
-      <div className={`history-wrapper ${className}`}>
+      <div className={`tool-item history-wrapper ${className}`}>
         {options.indexOf('undo') >= 0 && <Option
           value="unordered-list-item"
           onClick={this.undo}

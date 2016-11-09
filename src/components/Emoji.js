@@ -51,7 +51,7 @@ export default class Emoji extends Component {
   renderEmojiModal() {
     return (
       <div
-        className="emoji-modal"
+        className="editor-modal emoji-modal"
         onClick={this.stopPropagation}
       >
         {

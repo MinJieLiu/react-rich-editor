@@ -27,7 +27,7 @@ export default class Emoji extends Component {
 
   addEmoji = (event) => {
     const { editorState, onChange } = this.props;
-    const contentState = Modifier.insertText(
+    const contentState = Modifier.replaceText(
       editorState.getCurrentContent(),
       editorState.getSelection(),
       `${event.target.innerHTML} `,

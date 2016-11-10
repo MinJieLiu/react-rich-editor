@@ -90,22 +90,21 @@ export default class Dropdown extends Component {
             })}
           />
         </a>
-        {expanded ?
+        {expanded ? (
           <ul
             className={`dropdown-option-wrapper ${optionWrapperClassName}`}
           >
-            {
-              React.Children.map(options, (option, index) => {
-                return option && React.cloneElement(
-                    option, {
-                      onSelect: this.onChange,
-                      highlighted: highlighted === index,
-                      setHighlighted: this.setHighlighted,
-                      index,
-                    });
-              })
-            }
-          </ul> : undefined}
+            {React.Children.map(options, (option, index) => (
+              option && React.cloneElement(
+                option, {
+                  onSelect: this.onChange,
+                  highlighted: highlighted === index,
+                  setHighlighted: this.setHighlighted,
+                  index,
+                })
+            ))}
+          </ul>
+        ) : undefined}
       </div>
     );
   }

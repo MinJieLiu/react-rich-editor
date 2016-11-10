@@ -126,11 +126,13 @@ export default class Link extends Component {
       <div
         className="editor-modal link-modal"
         onClick={this.stopPropagation}
+        onMouseDown={this.stopPropagation}
+        onMouseUp={this.stopPropagation}
       >
         <div className="link-modal-item">
           <span className="link-modal-label">链接</span>
           <input
-            className="link-modal-input"
+            className="editor-input"
             onChange={this.updateLinkTitle}
             value={linkTitle}
           />
@@ -138,7 +140,7 @@ export default class Link extends Component {
         <div className="link-modal-item">
           <span className="link-modal-label">目标</span>
           <input
-            className="link-modal-input"
+            className="editor-input"
             onChange={this.updateLinkTarget}
             value={linkTarget}
           />

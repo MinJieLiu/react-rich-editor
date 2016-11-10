@@ -106,13 +106,13 @@ export default class Image extends Component {
     });
   };
 
-  stopPropagationPreventDefault = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+  stopPropagationPreventDefault = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
   };
 
-  stopPropagation = (event) => {
-    event.stopPropagation();
+  stopPropagation = (e) => {
+    e.stopPropagation();
   };
 
   renderAddImageModal() {
@@ -122,9 +122,11 @@ export default class Image extends Component {
       <div
         className="editor-modal image-modal"
         onClick={this.stopPropagation}
+        onMouseDown={this.stopPropagation}
+        onMouseUp={this.stopPropagation}
       >
         <div className="image-modal-header">
-          {uploadCallback ?
+          {uploadCallback ? (
             <span
               onClick={this.showImageUploadOption}
               className={classNames(
@@ -134,9 +136,7 @@ export default class Image extends Component {
             >
               <span>文件上传</span>
             </span>
-            :
-            undefined
-          }
+          ) : undefined}
           <span
             onClick={this.showImageURLOption}
             className={classNames(
@@ -148,43 +148,40 @@ export default class Image extends Component {
           </span>
         </div>
         <div className="image-modal-content">
-          {
-            showImageUpload && uploadCallback ? (
-              <div>
-                <div
-                  onDragEnter={this.stopPropagationPreventDefault}
-                  onDragOver={this.stopPropagationPreventDefault}
-                  onDrop={this.onImageDrop}
-                  className={classNames(
-                    'image-modal-upload-option',
-                    { 'image-modal-upload-option-highlighted': dragEnter })}
+          {showImageUpload && uploadCallback ? (
+            <div>
+              <div
+                onDragEnter={this.stopPropagationPreventDefault}
+                onDragOver={this.stopPropagationPreventDefault}
+                onDrop={this.onImageDrop}
+                className={classNames(
+                  'image-modal-upload-option',
+                  { 'image-modal-upload-option-highlighted': dragEnter })}
+              >
+                <label
+                  htmlFor="file"
+                  className="image-modal-upload-option-label"
                 >
-                  <label
-                    htmlFor="file"
-                    className="image-modal-upload-option-label"
-                  >
-                    点击或将文件拖到这里
-                  </label>
-                </div>
-                <input
-                  type="file"
-                  id="file"
-                  onChange={this.selectImage}
-                  className="image-modal-upload-option-input"
-                />
+                  点击或将文件拖到这里
+                </label>
               </div>
-            ) : (
-              <div className="image-modal-url-section">
-                <input
-                  className="image-modal-url-input"
-                  placeholder="Enter url"
-                  onChange={this.updateImageSrc}
-                  onBlur={this.updateImageSrc}
-                  value={imgSrc}
-                />
-              </div>
-            )
-          }
+              <input
+                type="file"
+                id="file"
+                onChange={this.selectImage}
+                className="image-modal-upload-option-input"
+              />
+            </div>
+          ) : (
+            <div className="image-modal-url-section">
+              <input
+                className="editor-input"
+                placeholder="请输入链接"
+                onChange={this.updateImageSrc}
+                value={imgSrc}
+              />
+            </div>
+          )}
           <div className="image-modal-btn-section">
             <button
               className="editor-button-primary"
@@ -201,11 +198,11 @@ export default class Image extends Component {
             </button>
           </div>
         </div>
-        {showImageLoading ?
+        {showImageLoading ? (
           <div className="image-modal-spinner">
             <Spinner />
-          </div> :
-          undefined}
+          </div>
+        ) : undefined}
       </div>
     );
   }

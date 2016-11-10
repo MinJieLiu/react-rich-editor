@@ -69,30 +69,15 @@
   }
 
   &-modal-upload-option-input {
+    position: absolute;
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
     overflow: hidden;
-    position: absolute;
     z-index: -1;
   }
 
   &-modal-url-section {
-    display: flex;
-  }
-
-  &-modal-url-input {
-    width: 90%;
-    height: 35px;
-    margin: 29px auto;
-    border: 1px solid #F1F1F1;
-    border-radius: 2px;
-    font-size: 15px;
-    padding: 0 5px;
-
-    &:focus {
-      outline: none;
-    }
   }
 
   &-modal-btn-section {

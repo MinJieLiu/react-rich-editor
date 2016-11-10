@@ -53,6 +53,8 @@ export default class Emoji extends Component {
       <div
         className="editor-modal emoji-modal"
         onClick={this.stopPropagation}
+        onMouseDown={this.stopPropagation}
+        onMouseUp={this.stopPropagation}
       >
         {
           this.emojis.map((emoji, index) => (

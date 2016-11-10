@@ -33,7 +33,7 @@ class Playground extends Component {
   imageUploadCallBack = file => new Promise(
     (resolve, reject) => {
       const xhr = new XMLHttpRequest(); // eslint-disable-line no-undef
-      xhr.open('POST', 'http://plan.v2.zhinanmao.com/common/uploadImg');
+      xhr.open('POST', 'http://plan.v2.zhinanmao.com/common/uploadImg1');
       const data = new FormData(); // eslint-disable-line no-undef
       data.append('file', file);
       xhr.send(data);

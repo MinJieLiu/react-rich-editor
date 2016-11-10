@@ -148,10 +148,12 @@ export const customInlineStylesMap = {
   fontFamily: {},
   SUPERSCRIPT: {
     position: 'relative',
+    top: -8,
     fontSize: 12,
   },
   SUBSCRIPT: {
     position: 'relative',
+    top: 8,
     fontSize: 12,
   },
 };

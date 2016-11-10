@@ -6,7 +6,6 @@
   &-options-popup {
     position: absolute;;
     background: white;
-    display: flex;
     padding: 5px 2px;
     border-radius: 2px;
     border: 1px solid #F1F1F1;
@@ -23,7 +22,6 @@
 }
 
 .alignment-option-left {
-  justify-content: flex-start;
 }
 
 .image-imagewrapper {
@@ -32,8 +30,6 @@
 
 .image-center {
   float: none;
-  display: flex;
-  justify-content: center;
 }
 
 .image-left {

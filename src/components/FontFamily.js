@@ -68,7 +68,7 @@ export default class FontFamily extends Component {
             fontFamilies.map((family, index) => (
               <DropdownOption
                 className="font-family-option"
-                active={currentFontFamily === family}
+                active={currentFontFamilyStr === family}
                 value={`fontfamily-${family}`}
                 key={index}
               >

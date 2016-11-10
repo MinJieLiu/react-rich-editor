@@ -16,6 +16,16 @@
     color: $editor-black-color;
     box-shadow: $editor-box-shadow;
     overflow: auto;
+
+    img {
+      max-width: 100%;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 10px 10px 10px 20px;
+      border-left: 4px solid deepskyblue;
+    }
   }
 
   &-toolbar {
@@ -28,6 +38,7 @@
     .tool-item {
       float: left;
       margin: 0 4px;
+      height: 36px;
     }
 
     &:after {

@@ -27,8 +27,8 @@ import Link from './Link';
 import Emoji from './Emoji';
 import Image from './Image';
 import History from './History';
-import LinkDecorator from '../decorators/Link';
-import ImageBlockRenderer from '../renderer/Image';
+import LinkDecorator from '../Decorators/Link';
+import ImageBlockRenderer from '../Renderer/Image';
 import defaultToolbar from '../config/defaultToolbar';
 
 export default class WysiwygEditor extends Component {

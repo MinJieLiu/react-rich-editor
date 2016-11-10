@@ -64,21 +64,21 @@ export default class FontSize extends Component {
           className={`font-size-dropdown ${className}`}
           onChange={this.toggleFontSize}
         >
-          {currentFontSizeNumber ? (
+          {currentFontSizeNumber ?
             <span>{currentFontSizeNumber}</span>
-          ) : (
+            :
             <img
               src={icon}
               role="presentation"
             />
-          )}
+          }
           {
             fontSizes.map((size, index) => (
               <DropdownOption
+                key={index}
                 className="font-size-option"
                 active={currentFontSize === size}
                 value={`font-size-${size}`}
-                key={index}
               >
                 {size}
               </DropdownOption>

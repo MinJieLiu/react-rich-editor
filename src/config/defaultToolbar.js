@@ -43,7 +43,7 @@ export default {
     'history',
   ],
   inline: {
-    inDropdown: false,
+    inDropdown: true,
     className: '',
     options: ['bold', 'italic', 'underline', 'strikethrough', 'code', 'superscript', 'subscript'],
     bold: { icon: bold, className: '' },
@@ -58,7 +58,7 @@ export default {
   fontSize: { icon: fontSize, className: '' },
   fontFamily: { className: '' },
   list: {
-    inDropdown: false,
+    inDropdown: true,
     className: '',
     options: ['unordered', 'ordered', 'indent', 'outdent'],
     unordered: { icon: unordered, className: '' },
@@ -67,7 +67,7 @@ export default {
     outdent: { icon: outdent, className: '' },
   },
   textAlign: {
-    inDropdown: false,
+    inDropdown: true,
     className: '',
     options: ['left', 'center', 'right', 'justify'],
     left: { icon: left, className: '' },
@@ -77,7 +77,7 @@ export default {
   },
   colorPicker: { icon: color, className: '' },
   link: {
-    inDropdown: false,
+    inDropdown: true,
     className: '',
     options: ['link', 'unlink'],
     link: { icon: link, className: '' },

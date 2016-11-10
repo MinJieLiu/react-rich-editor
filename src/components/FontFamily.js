@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import {
+  fontFamilies,
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
-} from 'draftjs-utils';
+} from '../utils';
 import Dropdown from './Dropdown';
 import DropdownOption from './DropdownOption';
 
@@ -14,20 +15,9 @@ export default class FontFamily extends Component {
     config: PropTypes.object,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentFontFamily: undefined,
-      fontFamilies: props.config.fontFamilies || [
-        '黑体',
-        '幼圆',
-        '微软雅黑',
-        '楷体',
-        '宋体',
-        'Verdana',
-      ],
-    };
-  }
+  state = {
+    currentFontFamily: undefined,
+  };
 
   componentWillMount() {
     const { editorState } = this.props;
@@ -60,7 +50,7 @@ export default class FontFamily extends Component {
   };
 
   render() {
-    const { fontFamilies, currentFontFamily } = this.state;
+    const { currentFontFamily } = this.state;
     const { config: { className } } = this.props;
     const currentFontFamilyStr =
       currentFontFamily && currentFontFamily.substring(11, currentFontFamily.length);
@@ -79,7 +69,7 @@ export default class FontFamily extends Component {
               <DropdownOption
                 className="font-family-option"
                 active={currentFontFamily === family}
-                value={`font-family-${family}`}
+                value={`fontFamily-${family}`}
                 key={index}
               >
                 {family}

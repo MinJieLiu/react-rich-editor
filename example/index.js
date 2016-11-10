@@ -49,7 +49,7 @@ class Playground extends Component {
         const error = JSON.parse(xhr.responseText);
         reject(error);
       });
-    }
+    },
   );
 
   render() {
@@ -77,9 +77,6 @@ class Playground extends Component {
           <textarea
             className="playground-content"
             value={draftToHtml(editorContent)}
-          />
-          <textarea
-            className="playground-content"
           />
         </div>
       </div>

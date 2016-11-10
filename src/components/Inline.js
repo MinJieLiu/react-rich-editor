@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import { getSelectionInlineStyle } from 'draftjs-utils';
 import { RichUtils, EditorState, Modifier } from 'draft-js';
-import { getFirstIcon } from '../utils/toolbar';
+import {
+  getSelectionInlineStyle,
+  getFirstIcon
+} from '../utils';
 import Option from './Option';
 import Dropdown from './Dropdown';
 import DropdownOption from './DropdownOption';

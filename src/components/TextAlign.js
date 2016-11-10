@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { getSelectedBlocksMetadata, setBlockData } from 'draftjs-utils';
+import {
+  getSelectedBlocksMetadata,
+  setBlockData,
+  getFirstIcon,
+} from '../utils';
 import Option from './Option';
-import { getFirstIcon } from '../utils/toolbar';
 import Dropdown from './Dropdown';
 import DropdownOption from './DropdownOption';
 

@@ -28,3 +28,17 @@ export function isEmptyString(str) {
 export function isMap(obj) {
   return Object.prototype.toString.call(obj) === '[object Object]';
 }
+
+/**
+ * Utility function to merge 2 objects.
+ */
+export function size(object) {
+  if (object) {
+    let count = 0;
+    forEach(object, () => {
+      count += 1;
+    });
+    return count;
+  }
+  return undefined;
+}

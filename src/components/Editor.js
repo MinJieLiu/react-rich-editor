@@ -8,13 +8,13 @@ import {
   CompositeDecorator,
   DefaultDraftBlockRenderMap,
 } from 'draft-js';
+import { Map } from 'immutable';
 import {
   handleNewLine,
   customStyleMap,
-} from 'draftjs-utils';
-import { Map } from 'immutable';
-import blockStyleFn from '../utils/BlockStyle';
-import { mergeRecursive } from '../utils/toolbar';
+  mergeRecursive,
+  blockStyleFn,
+} from '../utils';
 import Inline from './Inline';
 import Block from './Block';
 import FontSize from './FontSize';

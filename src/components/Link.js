@@ -4,8 +4,8 @@ import {
   getSelectionText,
   getEntityRange,
   getSelectionEntity,
-} from 'draftjs-utils';
-import { getFirstIcon } from '../utils/toolbar';
+  getFirstIcon,
+} from '../utils';
 import Option from './Option';
 import Dropdown from './Dropdown';
 import DropdownOption from './DropdownOption';

@@ -4,7 +4,7 @@ import {
   colors,
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
-} from 'draftjs-utils';
+} from '../utils';
 import Option from './Option';
 
 export default class ColorPicker extends Component {
@@ -52,7 +52,7 @@ export default class ColorPicker extends Component {
 
   setCurrentStyleBgcolor = () => {
     this.setState({
-      currentStyle: 'bgcolor',
+      currentStyle: 'bgColor',
     });
   };
 
@@ -104,7 +104,7 @@ export default class ColorPicker extends Component {
           <span
             className={classNames(
               'color-picker-modal-style-label',
-              { 'color-picker-modal-style-label-active': currentStyle === 'bgcolor' },
+              { 'color-picker-modal-style-label-active': currentStyle === 'bgColor' },
             )}
             onClick={this.setCurrentStyleBgcolor}
           >

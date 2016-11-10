@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { getSelectedBlocksType } from 'draftjs-utils';
 import { RichUtils } from 'draft-js';
+import { getSelectedBlocksType } from '../utils';
 import Dropdown from './Dropdown';
 import DropdownOption from './DropdownOption';
 

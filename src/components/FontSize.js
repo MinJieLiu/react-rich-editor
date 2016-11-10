@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import {
+  fontSizes,
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
-} from 'draftjs-utils';
+} from '../utils';
 import Dropdown from './Dropdown';
 import DropdownOption from './DropdownOption';
 
@@ -14,13 +15,9 @@ export default class FontSize extends Component {
     config: PropTypes.object,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentFontSize: undefined,
-      fontSizes: props.config.fontSizes || [10, 12, 14, 16, 18, 20, 22, 24, 26, 28],
-    };
-  }
+  state = {
+    currentFontSize: undefined,
+  };
 
   componentWillMount() {
     const { editorState } = this.props;
@@ -55,7 +52,7 @@ export default class FontSize extends Component {
 
   render() {
     const { config: { icon, className } } = this.props;
-    const { fontSizes, currentFontSize } = this.state;
+    const { currentFontSize } = this.state;
     const currentFontSizeNumber = currentFontSize
       && Number(currentFontSize.substring(9, currentFontSize.length));
     return (
@@ -78,7 +75,7 @@ export default class FontSize extends Component {
                 key={index}
                 className="font-size-option"
                 active={currentFontSize === size}
-                value={`font-size-${size}`}
+                value={`fontSize-${size}`}
               >
                 {size}
               </DropdownOption>

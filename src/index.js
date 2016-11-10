@@ -1,6 +1,4 @@
 import './styles/index.scss';
-import { Editor } from './components';
+import Editor from './components';
 
-module.exports = {
-  Editor,
-};
+export default Editor;

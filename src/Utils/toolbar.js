@@ -26,9 +26,7 @@ const mergeRecursive = (obj1, obj2) => {
   return mergedValue;
 };
 
-module.exports = {
+export {
   getFirstIcon,
   mergeRecursive,
 };
-
-// todo: writing test cases for these methods and new methods added in common.js

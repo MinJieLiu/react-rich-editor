@@ -166,27 +166,31 @@ export default class Link extends Component {
     const { options, link, unlink, className } = config;
     return (
       <div className={`tool-item link-wrapper ${className}`}>
-        {options.indexOf('link') >= 0 && <Option
-          value="unordered-list-item"
-          className={link.className}
-          onClick={this.toggleLinkModal}
-        >
-          <img
-            src={link.icon}
-            role="presentation"
-          />
-        </Option>}
-        {options.indexOf('unlink') >= 0 && <Option
-          disabled={!currentEntity}
-          value="ordered-list-item"
-          className={unlink.className}
-          onClick={this.removeLink}
-        >
-          <img
-            src={unlink.icon}
-            role="presentation"
-          />
-        </Option>}
+        {options.indexOf('link') >= 0 && (
+          <Option
+            value="unordered-list-item"
+            className={link.className}
+            onClick={this.toggleLinkModal}
+          >
+            <img
+              src={link.icon}
+              role="presentation"
+            />
+          </Option>
+        )}
+        {options.indexOf('unlink') >= 0 && (
+          <Option
+            disabled={!currentEntity}
+            value="ordered-list-item"
+            className={unlink.className}
+            onClick={this.removeLink}
+          >
+            <img
+              src={unlink.icon}
+              role="presentation"
+            />
+          </Option>
+        )}
         {showModal ? this.renderAddLinkModal() : undefined}
       </div>
     );
@@ -204,25 +208,29 @@ export default class Link extends Component {
             src={getFirstIcon(config)}
             role="presentation"
           />
-          {options.indexOf('link') >= 0 && <DropdownOption
-            onClick={this.toggleLinkModal}
-            className={`link-dropdown-option ${link.className}`}
-          >
-            <img
-              src={link.icon}
-              role="presentation"
-            />
-          </DropdownOption>}
-          {options.indexOf('unlink') >= 0 && <DropdownOption
-            onClick={this.removeLink}
-            disabled={!currentEntity}
-            className={`link-dropdown-option ${unlink.className}`}
-          >
-            <img
-              src={unlink.icon}
-              role="presentation"
-            />
-          </DropdownOption>}
+          {options.indexOf('link') >= 0 && (
+            <DropdownOption
+              onClick={this.toggleLinkModal}
+              className={`link-dropdown-option ${link.className}`}
+            >
+              <img
+                src={link.icon}
+                role="presentation"
+              />
+            </DropdownOption>
+          )}
+          {options.indexOf('unlink') >= 0 && (
+            <DropdownOption
+              onClick={this.removeLink}
+              disabled={!currentEntity}
+              className={`link-dropdown-option ${unlink.className}`}
+            >
+              <img
+                src={unlink.icon}
+                role="presentation"
+              />
+            </DropdownOption>
+          )}
         </Dropdown>
         {showModal ? this.renderAddLinkModal() : undefined}
       </div>

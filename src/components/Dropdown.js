@@ -79,20 +79,20 @@ export default class Dropdown extends Component {
         onMouseLeave={this.collapse}
       >
         <a
-          className="dropdown-selectedtext"
+          className="dropdown-selected-text"
           onClick={this.toggleExpansion}
         >
           {children[0]}
           <div
             className={classNames({
-              'dropdown-carettoclose': expanded,
-              'dropdown-carettoopen': !expanded,
+              'dropdown-caretto-close': expanded,
+              'dropdown-caretto-open': !expanded,
             })}
           />
         </a>
         {expanded ?
           <ul
-            className={`dropdown-optionwrapper ${optionWrapperClassName}`}
+            className={`dropdown-option-wrapper ${optionWrapperClassName}`}
           >
             {
               React.Children.map(options, (option, index) => {

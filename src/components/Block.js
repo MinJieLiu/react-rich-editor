@@ -72,14 +72,15 @@ export default class Block extends Component {
         >
           <span>{currentLabel}</span>
           {
-            this.blocksTypes.map((block, index) =>
+            this.blocksTypes.map((block, index) => (
               <DropdownOption
                 active={currentBlockType === block.style}
                 value={block.style}
                 key={index}
               >
                 {block.label}
-              </DropdownOption>)
+              </DropdownOption>
+            ))
           }
         </Dropdown>
       </div>

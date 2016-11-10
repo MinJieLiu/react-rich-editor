@@ -36,17 +36,17 @@
     }
   }
 
-  &-carettoopen {
+  &-caretto-open {
     @include arrow();
     border-top: 6px solid currentColor;
   }
 
-  &-carettoclose {
+  &-caretto-close {
     @include arrow();
     border-bottom: 6px solid currentColor;
   }
 
-  &-selectedtext {
+  &-selected-text {
     position: relative;
     display: inline-block;
     padding: 0 8px;
@@ -55,7 +55,7 @@
     line-height: 36px;
   }
 
-  &-optionwrapper {
+  &-option-wrapper {
     position: relative;
     list-style: none;
     margin: 0;

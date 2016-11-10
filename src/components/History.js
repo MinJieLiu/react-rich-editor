@@ -65,26 +65,30 @@ export default class History extends Component {
           src={getFirstIcon(config)}
           role="presentation"
         />
-        {options.indexOf('undo') >= 0 && <DropdownOption
-          onClick={this.undo}
-          disabled={undoDisabled}
-          className={`history-dropdown-option ${undo.className}`}
-        >
-          <img
-            src={undo.icon}
-            role="presentation"
-          />
-        </DropdownOption>}
-        {options.indexOf('redo') >= 0 && <DropdownOption
-          onClick={this.redo}
-          disabled={redoDisabled}
-          className={`history-dropdown-option ${redo.className}`}
-        >
-          <img
-            src={redo.icon}
-            role="presentation"
-          />
-        </DropdownOption>}
+        {options.indexOf('undo') >= 0 && (
+          <DropdownOption
+            onClick={this.undo}
+            disabled={undoDisabled}
+            className={`history-dropdown-option ${undo.className}`}
+          >
+            <img
+              src={undo.icon}
+              role="presentation"
+            />
+          </DropdownOption>
+        )}
+        {options.indexOf('redo') >= 0 && (
+          <DropdownOption
+            onClick={this.redo}
+            disabled={redoDisabled}
+            className={`history-dropdown-option ${redo.className}`}
+          >
+            <img
+              src={redo.icon}
+              role="presentation"
+            />
+          </DropdownOption>
+        )}
       </Dropdown>
     );
   }
@@ -93,28 +97,32 @@ export default class History extends Component {
     const { options, undo, redo, className } = config;
     return (
       <div className={`tool-item history-wrapper ${className}`}>
-        {options.indexOf('undo') >= 0 && <Option
-          value="unordered-list-item"
-          onClick={this.undo}
-          className={undo.className}
-          disabled={undoDisabled}
-        >
-          <img
-            src={undo.icon}
-            role="presentation"
-          />
-        </Option>}
-        {options.indexOf('redo') >= 0 && <Option
-          value="ordered-list-item"
-          onClick={this.redo}
-          className={redo.className}
-          disabled={redoDisabled}
-        >
-          <img
-            src={redo.icon}
-            role="presentation"
-          />
-        </Option>}
+        {options.indexOf('undo') >= 0 && (
+          <Option
+            value="unordered-list-item"
+            onClick={this.undo}
+            className={undo.className}
+            disabled={undoDisabled}
+          >
+            <img
+              src={undo.icon}
+              role="presentation"
+            />
+          </Option>
+        )}
+        {options.indexOf('redo') >= 0 && (
+          <Option
+            value="ordered-list-item"
+            onClick={this.redo}
+            className={redo.className}
+            disabled={redoDisabled}
+          >
+            <img
+              src={redo.icon}
+              role="presentation"
+            />
+          </Option>
+        )}
       </div>
     );
   }

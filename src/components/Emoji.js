@@ -55,12 +55,16 @@ export default class Emoji extends Component {
         onClick={this.stopPropagation}
       >
         {
-          this.emojis.map((emoji, index) => (<span
-            key={index}
-            className="emoji-icon"
-            role="presentation"
-            onClick={this.addEmoji}
-          >{emoji}</span>))
+          this.emojis.map((emoji, index) => (
+            <span
+              key={index}
+              className="emoji-icon"
+              role="presentation"
+              onClick={this.addEmoji}
+            >
+              {emoji}
+            </span>
+          ))
         }
       </div>
     );

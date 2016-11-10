@@ -88,46 +88,54 @@ export default class List extends Component {
     const { options, unordered, ordered, indent, outdent, className } = config;
     return (
       <div className={`tool-item list-wrapper ${className}`}>
-        {options.indexOf('unordered') >= 0 && <Option
-          value="unordered-list-item"
-          onClick={this.toggleBlockType}
-          className={unordered.className}
-          active={currentBlockType === 'unordered-list-item'}
-        >
-          <img
-            src={unordered.icon}
-            role="presentation"
-          />
-        </Option>}
-        {options.indexOf('ordered') >= 0 && <Option
-          value="ordered-list-item"
-          onClick={this.toggleBlockType}
-          className={ordered.className}
-          active={currentBlockType === 'ordered-list-item'}
-        >
-          <img
-            src={ordered.icon}
-            role="presentation"
-          />
-        </Option>}
-        {options.indexOf('indent') >= 0 && <Option
-          onClick={this.indent}
-          className={indent.className}
-        >
-          <img
-            src={indent.icon}
-            role="presentation"
-          />
-        </Option>}
-        {options.indexOf('outdent') >= 0 && <Option
-          onClick={this.outdent}
-          className={outdent.className}
-        >
-          <img
-            src={outdent.icon}
-            role="presentation"
-          />
-        </Option>}
+        {options.indexOf('unordered') >= 0 && (
+          <Option
+            value="unordered-list-item"
+            onClick={this.toggleBlockType}
+            className={unordered.className}
+            active={currentBlockType === 'unordered-list-item'}
+          >
+            <img
+              src={unordered.icon}
+              role="presentation"
+            />
+          </Option>
+        )}
+        {options.indexOf('ordered') >= 0 && (
+          <Option
+            value="ordered-list-item"
+            onClick={this.toggleBlockType}
+            className={ordered.className}
+            active={currentBlockType === 'ordered-list-item'}
+          >
+            <img
+              src={ordered.icon}
+              role="presentation"
+            />
+          </Option>
+        )}
+        {options.indexOf('indent') >= 0 && (
+          <Option
+            onClick={this.indent}
+            className={indent.className}
+          >
+            <img
+              src={indent.icon}
+              role="presentation"
+            />
+          </Option>
+        )}
+        {options.indexOf('outdent') >= 0 && (
+          <Option
+            onClick={this.outdent}
+            className={outdent.className}
+          >
+            <img
+              src={outdent.icon}
+              role="presentation"
+            />
+          </Option>
+        )}
       </div>
     );
   }
@@ -145,17 +153,19 @@ export default class List extends Component {
         />
         { this.options
           .filter(option => options.indexOf(option.type) >= 0)
-          .map((option, index) => (<DropdownOption
-            key={index}
-            value={option.value}
-            className={`list-dropdown-option ${config[option.type].className}`}
-            active={currentBlockType === option.value}
-          >
-            <img
-              src={config[option.type].icon}
-              role="presentation"
-            />
-          </DropdownOption>))
+          .map((option, index) => (
+            <DropdownOption
+              key={index}
+              value={option.value}
+              className={`list-dropdown-option ${config[option.type].className}`}
+              active={currentBlockType === option.value}
+            >
+              <img
+                src={config[option.type].icon}
+                role="presentation"
+              />
+            </DropdownOption>
+          ))
         }
       </Dropdown>
     );

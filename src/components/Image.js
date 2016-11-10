@@ -149,7 +149,7 @@ export default class Image extends Component {
         </div>
         <div className="image-modal-content">
           {
-            showImageUpload && uploadCallback ?
+            showImageUpload && uploadCallback ? (
               <div>
                 <div
                   onDragEnter={this.stopPropagationPreventDefault}
@@ -172,7 +172,8 @@ export default class Image extends Component {
                   onChange={this.selectImage}
                   className="image-modal-upload-option-input"
                 />
-              </div> :
+              </div>
+            ) : (
               <div className="image-modal-url-section">
                 <input
                   className="image-modal-url-input"
@@ -182,6 +183,7 @@ export default class Image extends Component {
                   value={imgSrc}
                 />
               </div>
+            )
           }
           <div className="image-modal-btn-section">
             <button

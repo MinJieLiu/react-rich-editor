@@ -11,9 +11,7 @@ import { Editor } from '../src';
 import './styles.scss';
 
 const contentBlocks = convertFromHTML(
-  `<p>长忆西湖。尽日凭阑楼上望：三三两两钓鱼舟，岛屿正清秋。
-    笛声依约芦花里，白鸟成行忽惊起。别来闲整钓鱼竿，思入水云寒。
-  </p>`
+  '<p>长忆西湖。尽日凭阑楼上望：三三两两钓鱼舟，岛屿正清秋。</p><p>笛声依约芦花里，白鸟成行忽惊起。别来闲整钓鱼竿，思入水云寒。</p>'
 );
 
 const contentState = ContentState.createFromBlockArray(contentBlocks);

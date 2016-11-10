@@ -59,13 +59,13 @@ export default class FontFamily extends Component {
         <Dropdown
           className={`font-family-dropdown ${className}`}
           onChange={this.toggleFontFamily}
-          optionWrapperClassName="font-family-optionwrapper"
+          optionWrapperClassName="font-family-option-wrapper"
         >
           <span className="font-family-placeholder">
             {currentFontFamily || 'Font-Family'}
           </span>
           {
-            fontFamilies.map((family, index) =>
+            fontFamilies.map((family, index) => (
               <DropdownOption
                 className="font-family-option"
                 active={currentFontFamily === family}
@@ -73,7 +73,8 @@ export default class FontFamily extends Component {
                 key={index}
               >
                 {family}
-              </DropdownOption>)
+              </DropdownOption>
+            ))
           }
         </Dropdown>
       </div>

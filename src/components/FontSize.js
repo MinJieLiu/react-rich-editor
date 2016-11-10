@@ -71,7 +71,7 @@ export default class FontSize extends Component {
             />
           }
           {
-            fontSizes.map((size, index) =>
+            fontSizes.map((size, index) => (
               <DropdownOption
                 className="font-size-option"
                 active={currentFontSize === size}
@@ -79,8 +79,8 @@ export default class FontSize extends Component {
                 key={index}
               >
                 {size}
-              </DropdownOption>,
-            )
+              </DropdownOption>
+            ))
           }
         </Dropdown>
       </div>

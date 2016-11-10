@@ -61,7 +61,7 @@ export default class Inline extends Component {
       <div className={`tool-item inline-wrapper ${config.className}`}>
         {
           config.options
-            .map((style, index) =>
+            .map((style, index) => (
               <Option
                 key={index}
                 value={style.toUpperCase()}
@@ -73,8 +73,8 @@ export default class Inline extends Component {
                   role="presentation"
                   src={config[style].icon}
                 />
-              </Option>,
-            )
+              </Option>
+            ))
         }
       </div>
     );
@@ -92,7 +92,7 @@ export default class Inline extends Component {
         />
         {
           config.options
-            .map((style, index) =>
+            .map((style, index) => (
               <DropdownOption
                 key={index}
                 value={style.toUpperCase()}
@@ -103,7 +103,8 @@ export default class Inline extends Component {
                   src={config[style].icon}
                   role="presentation"
                 />
-              </DropdownOption>)
+              </DropdownOption>
+            ))
         }
       </Dropdown>
     );

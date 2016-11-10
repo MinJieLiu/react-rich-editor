@@ -1,4 +1,4 @@
-import { Entity, ContentBlock } from 'draft-js';
+import { Entity } from 'draft-js';
 import Image from './image';
 
 export default function ImageBlockRenderer(block) {

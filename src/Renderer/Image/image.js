@@ -10,7 +10,7 @@ export default class Image extends Component {
   };
 
   state = {
-    hovered: false,
+    focused: false,
   };
 
   setEntityAlignmentLeft = () => {
@@ -37,10 +37,10 @@ export default class Image extends Component {
     });
   };
 
-  toggleHovered = () => {
-    const hovered = !this.state.hovered;
+  toggleFocused = () => {
+    const focused = this.state.focused;
     this.setState({
-      hovered,
+      focused: !focused,
     });
   };
 
@@ -53,19 +53,19 @@ export default class Image extends Component {
           onClick={this.setEntityAlignmentLeft}
           className="image-alignment-option"
         >
-          L
+          居左
         </Option>
         <Option
           onClick={this.setEntityAlignmentCenter}
           className="image-alignment-option"
         >
-          C
+          居中
         </Option>
         <Option
           onClick={this.setEntityAlignmentRight}
           className="image-alignment-option"
         >
-          R
+          居右
         </Option>
       </div>
     );
@@ -73,13 +73,12 @@ export default class Image extends Component {
 
   render() {
     const { block } = this.props;
-    const { hovered } = this.state;
+    const { focused } = this.state;
     const entity = Entity.get(block.getEntityAt(0));
     const { src, alignment } = entity.getData();
     return (
       <span
-        onMouseEnter={this.toggleHovered}
-        onMouseLeave={this.toggleHovered}
+        onClick={this.toggleFocused}
         className={classNames(
           'image-alignment',
           {
@@ -89,14 +88,18 @@ export default class Image extends Component {
           },
         )}
       >
-        <span className="image-imagewrapper">
+        <span className="image-alignment-wrapper">
           <img
             src={src}
             role="presentation"
-
+            className={classNames(
+              'image-alignment-image', {
+                'image-alignment-image-focus': !!focused,
+              },
+            )}
           />
           {
-            hovered ?
+            focused ?
               this.renderAlignmentOptions()
               :
               undefined

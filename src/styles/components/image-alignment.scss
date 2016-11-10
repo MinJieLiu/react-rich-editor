@@ -2,30 +2,45 @@
 
 .image-alignment {
   position: relative;
+  display: inline-block;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  &-wrapper {
+    display: inline-block;
+  }
+
+  &-image {
+    display: block;
+    border: 2px solid transparent;
+  }
+
+  &-image-focus {
+    display: block;
+    opacity: 0.9;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+  }
 
   &-options-popup {
-    position: absolute;;
+    position: absolute;
+    left: 50%;
     background: white;
-    padding: 5px 2px;
-    border-radius: 2px;
-    border: 1px solid #F1F1F1;
-    width: 105px;
+    box-shadow: $editor-box-shadow;
     cursor: pointer;
+    transform: translate(-50%);
     z-index: 100;
   }
 
   &-option {
-    height: 15px;
-    width: 15px;
+    padding: 8px 16px;
+    width: auto;
+    height: auto;
+    line-height: inherit;
   }
-
-}
-
-.alignment-option-left {
-}
-
-.image-imagewrapper {
-  position: relative;
 }
 
 .image-center {

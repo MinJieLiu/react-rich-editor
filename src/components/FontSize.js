@@ -75,7 +75,7 @@ export default class FontSize extends Component {
                 key={index}
                 className="font-size-option"
                 active={currentFontSize === size}
-                value={`fontSize-${size}`}
+                value={`fontsize-${size}`}
               >
                 {size}
               </DropdownOption>

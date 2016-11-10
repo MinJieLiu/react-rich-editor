@@ -69,7 +69,7 @@ export default class FontFamily extends Component {
               <DropdownOption
                 className="font-family-option"
                 active={currentFontFamily === family}
-                value={`fontFamily-${family}`}
+                value={`fontfamily-${family}`}
                 key={index}
               >
                 {family}

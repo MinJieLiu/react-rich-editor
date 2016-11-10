@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { RichUtils, EditorState, Modifier } from 'draft-js';
 import {
   getSelectionInlineStyle,
-  getFirstIcon
+  getFirstIcon,
 } from '../utils';
 import Option from './Option';
 import Dropdown from './Dropdown';

@@ -52,7 +52,7 @@ export default class ColorPicker extends Component {
 
   setCurrentStyleBgcolor = () => {
     this.setState({
-      currentStyle: 'bgColor',
+      currentStyle: 'bgcolor',
     });
   };
 
@@ -104,7 +104,7 @@ export default class ColorPicker extends Component {
           <span
             className={classNames(
               'color-picker-modal-style-label',
-              { 'color-picker-modal-style-label-active': currentStyle === 'bgColor' },
+              { 'color-picker-modal-style-label-active': currentStyle === 'bgcolor' },
             )}
             onClick={this.setCurrentStyleBgcolor}
           >

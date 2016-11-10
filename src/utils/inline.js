@@ -143,33 +143,33 @@ export const fontFamilies = [
  */
 export const customInlineStylesMap = {
   color: {},
-  bgColor: {},
+  bgcolor: {},
   fontSize: {},
   fontFamily: {},
   SUPERSCRIPT: {
-    fontSize: 12,
     position: 'relative',
+    fontSize: 12,
   },
   SUBSCRIPT: {
-    fontSize: 12,
     position: 'relative',
+    fontSize: 12,
   },
 };
 colors.forEach((color) => {
   customInlineStylesMap.color[`color-${color}`] = {
     color,
   };
-  customInlineStylesMap.bgColor[`bgColor-${color}`] = {
+  customInlineStylesMap.bgcolor[`bgcolor-${color}`] = {
     backgroundColor: color,
   };
 });
 fontSizes.forEach((size) => {
-  customInlineStylesMap.fontSize[`fontSize-${size}`] = {
+  customInlineStylesMap.fontSize[`fontsize-${size}`] = {
     fontSize: size,
   };
 });
 fontFamilies.forEach((family) => {
-  customInlineStylesMap.fontFamily[`fontFamily-${family}`] = {
+  customInlineStylesMap.fontFamily[`fontfamily-${family}`] = {
     fontFamily: family,
   };
 });
@@ -179,7 +179,7 @@ fontFamilies.forEach((family) => {
  */
 export const customStyleMap = {
   ...customInlineStylesMap.color,
-  ...customInlineStylesMap.bgColor,
+  ...customInlineStylesMap.bgcolor,
   ...customInlineStylesMap.fontSize,
   ...customInlineStylesMap.fontFamily,
   SUPERSCRIPT: customInlineStylesMap.SUPERSCRIPT,
@@ -219,7 +219,7 @@ export function toggleCustomInlineStyle(editorState, styleType, style) {
  */
 function getStyleAtOffset(block, stylePrefix, offset) {
   const styles = block.getInlineStyleAt(offset).toList();
-  const style = styles.filter(item => item.toLowerCase().startsWith(stylePrefix.toLowerCase()));
+  const style = styles.filter(item => item.startsWith(stylePrefix.toLowerCase()));
   if (style && style.size > 0) {
     return style.get(0);
   }

@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: text-align;
-
-.#{$prefix-cls} {
+.text-align {
 
   &-wrapper {
   }
@@ -12,7 +10,7 @@ $prefix-cls: text-align;
     z-index: 90;
   }
 
-  &-dropdownOption {
+  &-dropdown-option {
   }
 
 }

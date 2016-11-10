@@ -15,18 +15,18 @@ import {
 import { Map } from 'immutable';
 import blockStyleFn from '../utils/BlockStyle';
 import { mergeRecursive } from '../utils/toolbar';
-import InlineControl from './Inline';
-import BlockControl from './Block';
-import FontSizeControl from './FontSize';
-import FontFamilyControl from './FontFamily';
-import ListControl from './List';
-import TextAlignControl from './TextAlign';
+import Inline from './Inline';
+import Block from './Block';
+import FontSize from './FontSize';
+import FontFamily from './FontFamily';
+import List from './List';
+import TextAlign from './TextAlign';
 import ColorPicker from './ColorPicker';
-import RemoveControl from './Remove';
-import LinkControl from './Link';
-import EmojiControl from './Emoji';
-import ImageControl from './Image';
-import HistoryControl from './History';
+import Remove from './Remove';
+import Link from './Link';
+import Emoji from './Emoji';
+import Image from './Image';
+import History from './History';
 import LinkDecorator from '../decorators/Link';
 import ImageBlockRenderer from '../renderer/Image';
 import defaultToolbar from '../config/defaultToolbar';
@@ -208,32 +208,32 @@ export default class WysiwygEditor extends Component {
               onMouseUp={this.onToolbarMouseUp}
               onClick={this.focusEditor}
             >
-              {options.indexOf('inline') >= 0 && <InlineControl
+              {options.indexOf('inline') >= 0 && <Inline
                 onChange={this.onChange}
                 editorState={editorState}
                 config={inline}
               />}
-              {options.indexOf('blockType') >= 0 && <BlockControl
+              {options.indexOf('blockType') >= 0 && <Block
                 onChange={this.onChange}
                 editorState={editorState}
                 config={blockType}
               />}
-              {options.indexOf('fontSize') >= 0 && <FontSizeControl
+              {options.indexOf('fontSize') >= 0 && <FontSize
                 onChange={this.onChange}
                 editorState={editorState}
                 config={fontSize}
               />}
-              {options.indexOf('fontFamily') >= 0 && <FontFamilyControl
+              {options.indexOf('fontFamily') >= 0 && <FontFamily
                 onChange={this.onChange}
                 editorState={editorState}
                 config={fontFamily}
               />}
-              {options.indexOf('list') >= 0 && <ListControl
+              {options.indexOf('list') >= 0 && <List
                 onChange={this.onChange}
                 editorState={editorState}
                 config={list}
               />}
-              {options.indexOf('textAlign') >= 0 && <TextAlignControl
+              {options.indexOf('textAlign') >= 0 && <TextAlign
                 onChange={this.onChange}
                 editorState={editorState}
                 config={textAlign}
@@ -243,27 +243,27 @@ export default class WysiwygEditor extends Component {
                 editorState={editorState}
                 config={colorPicker}
               />}
-              {options.indexOf('link') >= 0 && <LinkControl
+              {options.indexOf('link') >= 0 && <Link
                 editorState={editorState}
                 onChange={this.onChange}
                 config={link}
               />}
-              {options.indexOf('emoji') >= 0 && <EmojiControl
+              {options.indexOf('emoji') >= 0 && <Emoji
                 editorState={editorState}
                 onChange={this.onChange}
                 config={emoji}
               />}
-              {options.indexOf('image') >= 0 && <ImageControl
+              {options.indexOf('image') >= 0 && <Image
                 editorState={editorState}
                 onChange={this.onChange}
                 config={image}
               />}
-              {options.indexOf('remove') >= 0 && <RemoveControl
+              {options.indexOf('remove') >= 0 && <Remove
                 editorState={editorState}
                 onChange={this.onChange}
                 config={remove}
               />}
-              {options.indexOf('history') >= 0 && <HistoryControl
+              {options.indexOf('history') >= 0 && <History
                 editorState={editorState}
                 onChange={this.onChange}
                 config={history}

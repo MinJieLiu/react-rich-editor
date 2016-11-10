@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: link;
-
-.#{$prefix-cls} {
+.link {
 
   &-wrapper {
     position: relative;
@@ -12,7 +10,7 @@ $prefix-cls: link;
     width: 50px;
   }
 
-  &-dropdownOption {
+  &-dropdown-option {
   }
 
   &-dropdownPlaceholder {
@@ -57,7 +55,7 @@ $prefix-cls: link;
     text-align: right;
   }
 
-  &-dropdownoption {
+  &-dropdown-option {
     height: 40px;
   }
 

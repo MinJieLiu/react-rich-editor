@@ -1,13 +1,11 @@
 @import "./variables";
 
-$prefix-cls: history;
-
-.#{$prefix-cls} {
+.history {
 
   &-wrapper {
   }
 
-  &-dropdownoption {
+  &-dropdown-option {
   }
 
   &-dropdown {

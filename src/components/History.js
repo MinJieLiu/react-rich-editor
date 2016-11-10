@@ -68,7 +68,7 @@ export default class History extends Component {
         {options.indexOf('undo') >= 0 && <DropdownOption
           onClick={this.undo}
           disabled={undoDisabled}
-          className={`history-dropdownoption ${undo.className}`}
+          className={`history-dropdown-option ${undo.className}`}
         >
           <img
             src={undo.icon}
@@ -78,7 +78,7 @@ export default class History extends Component {
         {options.indexOf('redo') >= 0 && <DropdownOption
           onClick={this.redo}
           disabled={redoDisabled}
-          className={`history-dropdownoption ${redo.className}`}
+          className={`history-dropdown-option ${redo.className}`}
         >
           <img
             src={redo.icon}

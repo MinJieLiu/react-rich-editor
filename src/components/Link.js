@@ -206,7 +206,7 @@ export default class Link extends Component {
           />
           {options.indexOf('link') >= 0 && <DropdownOption
             onClick={this.toggleLinkModal}
-            className={`link-dropdownoption ${link.className}`}
+            className={`link-dropdown-option ${link.className}`}
           >
             <img
               src={link.icon}
@@ -216,7 +216,7 @@ export default class Link extends Component {
           {options.indexOf('unlink') >= 0 && <DropdownOption
             onClick={this.removeLink}
             disabled={!currentEntity}
-            className={`link-dropdownoption ${unlink.className}`}
+            className={`link-dropdown-option ${unlink.className}`}
           >
             <img
               src={unlink.icon}

@@ -103,7 +103,7 @@ export default class TextAlign extends Component {
         {options.indexOf('left') >= 0 && <DropdownOption
           value="left"
           active={currentTextAlignment === 'left'}
-          className={`text-align-dropdownOption ${left.className}`}
+          className={`text-align-dropdown-option ${left.className}`}
         >
           <img
             src={left.icon}
@@ -113,7 +113,7 @@ export default class TextAlign extends Component {
         {options.indexOf('center') >= 0 && <DropdownOption
           value="center"
           active={currentTextAlignment === 'center'}
-          className={`text-align-dropdownOption ${center.className}`}
+          className={`text-align-dropdown-option ${center.className}`}
         >
           <img
             src={center.icon}
@@ -123,7 +123,7 @@ export default class TextAlign extends Component {
         {options.indexOf('right') >= 0 && <DropdownOption
           value="right"
           active={currentTextAlignment === 'right'}
-          className={`text-align-dropdownOption ${right.className}`}
+          className={`text-align-dropdown-option ${right.className}`}
         >
           <img
             src={right.icon}
@@ -133,7 +133,7 @@ export default class TextAlign extends Component {
         {options.indexOf('justify') >= 0 && <DropdownOption
           value="justify"
           active={currentTextAlignment === 'justify'}
-          className={`text-align-dropdownOption ${justify.className}`}
+          className={`text-align-dropdown-option ${justify.className}`}
         >
           <img
             src={justify.icon}

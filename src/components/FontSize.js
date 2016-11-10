@@ -56,9 +56,9 @@ export default class FontSize extends Component {
     currentFontSize = currentFontSize
       && Number(currentFontSize.substring(9, currentFontSize.length));
     return (
-      <div className="tool-item fontsize-wrapper">
+      <div className="tool-item font-size-wrapper">
         <Dropdown
-          className={`fontsize-dropdown ${className}`}
+          className={`font-size-dropdown ${className}`}
           onChange={this.toggleFontSize}
         >
           {currentFontSize
@@ -73,9 +73,9 @@ export default class FontSize extends Component {
           {
             fontSizes.map((size, index) =>
               <DropdownOption
-                className="fontsize-option"
+                className="font-size-option"
                 active={currentFontSize === size}
-                value={`fontsize-${size}`}
+                value={`font-size-${size}`}
                 key={index}
               >
                 {size}

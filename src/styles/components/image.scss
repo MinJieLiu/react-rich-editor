@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: image;
-
-.#{$prefix-cls} {
+.image {
 
   &-wrapper {
     position: relative;

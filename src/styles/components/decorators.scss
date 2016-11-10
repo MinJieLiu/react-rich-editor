@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: link-decorator;
-
-.#{$prefix-cls} {
+.link-decorator {
 
   &-wrapper {
     position: relative;

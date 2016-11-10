@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: dropdownoption;
-
-.#{$prefix-cls} {
+.dropdown-option {
 
   &-default {
     padding: 12px 18px;

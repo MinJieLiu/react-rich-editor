@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: option;
-
-.#{$prefix-cls} {
+.option {
 
   &-wrapper {
     position: relative;

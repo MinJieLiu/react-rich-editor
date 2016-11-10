@@ -1,8 +1,7 @@
 @import "./variables";
 
-$prefix-cls: editor;
+.editor {
 
-.#{$prefix-cls} {
   &-wrapper {
     box-sizing: border-box;
     & * {

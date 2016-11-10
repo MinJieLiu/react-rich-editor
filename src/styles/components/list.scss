@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: list;
-
-.#{$prefix-cls} {
+.list {
   &-wrapper {
   }
 
@@ -11,6 +9,6 @@ $prefix-cls: list;
     z-index: 90;
   }
 
-  &-dropdownOption {
+  &-dropdown-option {
   }
 }

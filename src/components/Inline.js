@@ -96,7 +96,7 @@ export default class Inline extends Component {
               <DropdownOption
                 key={index}
                 value={style.toUpperCase()}
-                className={`inline-dropdownoption ${config[style].className}`}
+                className={`inline-dropdown-option ${config[style].className}`}
                 active={currentStyles[style.toUpperCase()] === true}
               >
                 <img

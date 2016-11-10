@@ -148,7 +148,7 @@ export default class List extends Component {
           .map((option, index) => (<DropdownOption
             key={index}
             value={option.value}
-            className={`list-dropdownOption ${config[option.type].className}`}
+            className={`list-dropdown-option ${config[option.type].className}`}
             active={currentBlockType === option.value}
           >
             <img

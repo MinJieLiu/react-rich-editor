@@ -87,14 +87,14 @@ export default class ColorPicker extends Component {
 
     return (
       <div
-        className="editor-modal colorpicker-modal"
+        className="editor-modal color-picker-modal"
         onClick={this.stopPropagation}
       >
-        <span className="colorpicker-modal-header">
+        <span className="color-picker-modal-header">
           <span
             className={classNames(
-              'colorpicker-modal-style-label',
-              { 'colorpicker-modal-style-label-active': currentStyle === 'color' },
+              'color-picker-modal-style-label',
+              { 'color-picker-modal-style-label-active': currentStyle === 'color' },
             )}
             onClick={this.setCurrentStyleColor}
           >
@@ -102,21 +102,21 @@ export default class ColorPicker extends Component {
           </span>
           <span
             className={classNames(
-              'colorpicker-modal-style-label',
-              { 'colorpicker-modal-style-label-active': currentStyle === 'bgcolor' },
+              'color-picker-modal-style-label',
+              { 'color-picker-modal-style-label-active': currentStyle === 'bgcolor' },
             )}
             onClick={this.setCurrentStyleBgcolor}
           >
             背景
           </span>
         </span>
-        <span className="colorpicker-modal-options">
+        <span className="color-picker-modal-options">
           {
             colors.map((color, index) =>
               <span
                 key={index}
-                className={classNames('colorpicker-option', {
-                  'colorpicker-option-active': currentSelectedColor === `${currentStyle}-${color}`,
+                className={classNames('color-picker-option', {
+                  'color-picker-option-active': currentSelectedColor === `${currentStyle}-${color}`,
                 })}
                 onClick={() => {
                   this.toggleColor(color);
@@ -133,7 +133,7 @@ export default class ColorPicker extends Component {
     const { config: { icon, className } } = this.props;
     const { showModal } = this.state;
     return (
-      <div className="tool-item colorpicker-wrapper">
+      <div className="tool-item color-picker-wrapper">
         <Option
           onClick={this.toggleModal}
           className={className}

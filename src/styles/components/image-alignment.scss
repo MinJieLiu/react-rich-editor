@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: image-alignment;
-
-.#{$prefix-cls} {
+.image-alignment {
   position: relative;
 
   &-options-popup {

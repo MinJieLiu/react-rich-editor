@@ -1,8 +1,6 @@
 @import "./variables";
 
-$prefix-cls: colorpicker;
-
-.#{$prefix-cls} {
+.color-picker {
   &-wrapper {
     position: relative;
   }

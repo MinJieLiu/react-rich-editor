@@ -20,7 +20,7 @@ export default {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /immutable\.js$|draftjs-utils\.js$|draftjs-to-html\.js$|lodash\.js$/
+        exclude: /immutable\.js$|draftjs-utils\.js$|draftjs-to-html\.js$|lodash\.js$/,
       },
       {
         test: /\.scss$/,
@@ -35,7 +35,7 @@ export default {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[local]!postcss-loader'
+          'css-loader?modules&importLoaders=1&localIdentName=[local]!postcss-loader',
         ),
       },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
@@ -53,7 +53,7 @@ export default {
       template: './example/index.html',
       inject: true,
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   postcss: () => [autoprefixer],
   resolve: {

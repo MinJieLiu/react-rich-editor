@@ -89,8 +89,7 @@ export default class ColorPicker extends Component {
       <div
         className="editor-modal color-picker-modal"
         onClick={this.stopPropagation}
-        onMouseDown={this.stopPropagation}
-        onMouseUp={this.stopPropagation}
+
       >
         <span className="color-picker-modal-header">
           <span

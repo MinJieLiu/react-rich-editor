@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import {
-  fontFamilies,
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
 } from 'draftjs-utils';
@@ -15,9 +14,20 @@ export default class FontFamily extends Component {
     config: PropTypes.object,
   };
 
-  state = {
-    currentFontFamily: undefined,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentFontFamily: undefined,
+      fontFamilies: props.config.fontFamilies || [
+        '黑体',
+        '幼圆',
+        '微软雅黑',
+        '楷体',
+        '宋体',
+        'Verdana',
+      ],
+    };
+  }
 
   componentWillMount() {
     const { editorState } = this.props;
@@ -50,9 +60,9 @@ export default class FontFamily extends Component {
   };
 
   render() {
-    let { currentFontFamily } = this.state;
+    const { fontFamilies, currentFontFamily } = this.state;
     const { config: { className } } = this.props;
-    currentFontFamily =
+    const currentFontFamilyStr =
       currentFontFamily && currentFontFamily.substring(11, currentFontFamily.length);
     return (
       <div className="tool-item font-family-wrapper">
@@ -62,7 +72,7 @@ export default class FontFamily extends Component {
           optionWrapperClassName="font-family-option-wrapper"
         >
           <span className="font-family-placeholder">
-            {currentFontFamily || 'Font-Family'}
+            {currentFontFamilyStr || '字体'}
           </span>
           {
             fontFamilies.map((family, index) => (

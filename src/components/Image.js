@@ -176,7 +176,7 @@ export default class Image extends Component {
             <div className="image-modal-url-section">
               <input
                 className="editor-input"
-                placeholder="请输入链接"
+                placeholder="请输入图片链接"
                 onChange={this.updateImageSrc}
                 value={imgSrc}
               />

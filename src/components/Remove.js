@@ -1,20 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { EditorState, Modifier } from 'draft-js';
+import { inlineStyles } from '../utils';
 import Option from './Option';
-
-const removeStyle = [
-  'BOLD',
-  'ITALIC',
-  'UNDERLINE',
-  'STRIKETHROUGH',
-  'CODE',
-  'FONTFAMILY',
-  'COLOR',
-  'BGCOLOR',
-  'FONTSIZE',
-  'SUPERSCRIPT',
-  'SUBSCRIPT',
-];
 
 export default class Remove extends Component {
 
@@ -26,7 +13,7 @@ export default class Remove extends Component {
 
   removeAllInlineStyles = (editorState) => {
     let contentState = editorState.getCurrentContent();
-    removeStyle.forEach((style) => {
+    inlineStyles.forEach((style) => {
       contentState = Modifier.removeInlineStyle(
         contentState,
         editorState.getSelection(),

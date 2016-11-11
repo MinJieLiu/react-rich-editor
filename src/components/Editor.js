@@ -7,6 +7,7 @@ import {
   convertFromRaw,
   CompositeDecorator,
   DefaultDraftBlockRenderMap,
+  Modifier,
 } from 'draft-js';
 import { Map } from 'immutable';
 import {
@@ -75,6 +76,19 @@ export default class WysiwygEditor extends Component {
       });
     }
   }
+
+  onTab = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const { editorState } = this.state;
+    const contentState = Modifier.replaceText(
+      editorState.getCurrentContent(),
+      editorState.getSelection(),
+      '\u{9}',
+      editorState.getCurrentInlineStyle(),
+    );
+    this.onChange(EditorState.push(editorState, contentState, 'insert-characters'), true);
+  };
 
   onChange = (editorState, focusEditor) => {
     this.setState({

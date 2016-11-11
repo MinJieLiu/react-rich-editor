@@ -8,6 +8,20 @@ import {
   getSelectedBlock,
 } from './block';
 
+export const inlineStyles = [
+  'BOLD',
+  'ITALIC',
+  'UNDERLINE',
+  'STRIKETHROUGH',
+  'CODE',
+  'FONTFAMILY',
+  'COLOR',
+  'BGCOLOR',
+  'FONTSIZE',
+  'SUPERSCRIPT',
+  'SUBSCRIPT',
+];
+
 /**
  * Function returns an object of inline styles currently applicable.
  * Following rules are applicable:
@@ -23,15 +37,7 @@ export function getSelectionInlineStyle(editorState) {
   const end = currentSelection.getEndOffset();
   const selectedBlocks = getSelectedBlocksList(editorState);
   if (selectedBlocks.size > 0) {
-    const inlineStyles = {
-      BOLD: true,
-      ITALIC: true,
-      UNDERLINE: true,
-      STRIKETHROUGH: true,
-      CODE: true,
-      SUPERSCRIPT: true,
-      SUBSCRIPT: true,
-    };
+    const resultStyles = {};
     for (let i = 0; i < selectedBlocks.size; i += 1) {
       let blockStart = i === 0 ? start : 0;
       let blockEnd =
@@ -44,12 +50,12 @@ export function getSelectionInlineStyle(editorState) {
       }
       for (let j = blockStart; j < blockEnd; j += 1) {
         const inlineStylesAtOffset = selectedBlocks.get(i).getInlineStyleAt(j);
-        ['BOLD', 'ITALIC', 'UNDERLINE', 'STRIKETHROUGH', 'CODE', 'SUPERSCRIPT', 'SUBSCRIPT'].forEach((style) => {
-          inlineStyles[style] = inlineStyles[style] && inlineStylesAtOffset.get(style) === style;
+        inlineStyles.forEach((style) => {
+          resultStyles[style] = inlineStylesAtOffset.get(style) === style;
         });
       }
     }
-    return inlineStyles;
+    return resultStyles;
   }
   return {};
 }
@@ -238,7 +244,7 @@ export function getSelectionCustomInlineStyle(editorState, styles) {
     const end = currentSelection.getEndOffset();
     const selectedBlocks = getSelectedBlocksList(editorState);
     if (selectedBlocks.size > 0) {
-      const inlineStyles = {};
+      const resultStyles = {};
       for (let i = 0; i < selectedBlocks.size; i += 1) {
         let blockStart = i === 0 ? start : 0;
         let blockEnd =
@@ -251,20 +257,20 @@ export function getSelectionCustomInlineStyle(editorState, styles) {
         }
         for (let j = blockStart; j < blockEnd; j += 1) {
           if (j === blockStart) {
-            styles.forEach((s) => {
-              inlineStyles[s] = getStyleAtOffset(selectedBlocks.get(i), s, j);
+            styles.forEach((style) => {
+              resultStyles[style] = getStyleAtOffset(selectedBlocks.get(i), style, j);
             });
           } else {
-            styles.forEach((s) => {
-              if (inlineStyles[s] &&
-                inlineStyles[s] !== getStyleAtOffset(selectedBlocks.get(i), s, j)) {
-                inlineStyles[s] = undefined;
+            styles.forEach((style) => {
+              if (resultStyles[style] &&
+                resultStyles[style] !== getStyleAtOffset(selectedBlocks.get(i), style, j)) {
+                resultStyles[style] = undefined;
               }
             });
           }
         }
       }
-      return inlineStyles;
+      return resultStyles;
     }
   }
   return {};

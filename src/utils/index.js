@@ -8,6 +8,7 @@ import {
 } from './toolbar';
 import blockStyleFn from './blockStyle';
 import {
+  inlineStyles,
   colors,
   fontSizes,
   fontFamilies,
@@ -59,6 +60,7 @@ export {
   setBlockData,
   getSelectedBlocksMetadata,
   // Functions related to inline styles
+  inlineStyles,
   colors,
   fontSizes,
   fontFamilies,

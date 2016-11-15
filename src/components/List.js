@@ -85,8 +85,6 @@ export default class List extends Component {
     this.adjustDepth(-1);
   };
 
-  // todo: evaluate refactoring this code to put a loop there and in other places also in code
-  // hint: it will require moving click handlers
   renderInFlatList(currentBlockType, config) {
     const { options, unordered, ordered, indent, outdent, className } = config;
     return (

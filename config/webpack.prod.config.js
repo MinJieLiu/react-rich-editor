@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 
-module.exports = {
+export default {
   devtool: 'source-map',
   entry: [
     './src/index',
@@ -38,20 +38,11 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /immutable\.js$|draftjs-utils\.js$/ },
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[local]!postcss-loader',
-        ),
-      },
-      {
         test: /\.scss$/,
-        loaders: [
+        loader: ExtractTextPlugin.extract(
           'style',
-          'css?sourceMap',
-          'postcss',
-          'sass?sourceMap',
-        ],
+          'css!postcss!sass?sourceMap',
+        ),
       },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
       {

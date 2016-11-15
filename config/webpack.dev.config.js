@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
@@ -31,13 +30,6 @@ export default {
           'sass?sourceMap',
         ],
       },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[local]!postcss-loader',
-        ),
-      },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -46,9 +38,6 @@ export default {
     ],
   },
   plugins: [
-    new ExtractTextPlugin('main.css', {
-      allChunks: true,
-    }),
     new HtmlWebpackPlugin({
       template: './example/index.html',
       inject: true,

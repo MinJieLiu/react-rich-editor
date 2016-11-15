@@ -173,14 +173,14 @@ export default class Image extends Component {
               />
             </div>
           ) : (
-            <div className="image-modal-url-section">
-              <input
-                className="editor-input"
-                placeholder="请输入图片链接"
-                onChange={this.updateImageSrc}
-                value={imgSrc}
-              />
-            </div>
+          <div className="image-modal-url-section">
+            <input
+              className="editor-input"
+              placeholder="请输入图片链接"
+              onChange={this.updateImageSrc}
+              value={imgSrc}
+            />
+          </div>
           )}
           <div className="image-modal-btn-section">
             <button

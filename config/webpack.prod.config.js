@@ -36,7 +36,11 @@ export default {
   ],
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /immutable\.js$|draftjs-utils\.js$/ },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /immutable\.js$|draftjs-utils\.js$/,
+      },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(

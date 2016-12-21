@@ -264,11 +264,13 @@ export default class WysiwygEditor extends Component {
                   config={textAlign}
                 />
               )}
-              {options.indexOf('colorPicker') >= 0 && <ColorPicker
-                onChange={this.onChange}
-                editorState={editorState}
-                config={colorPicker}
-              />}
+              {options.indexOf('colorPicker') >= 0 && (
+                <ColorPicker
+                  onChange={this.onChange}
+                  editorState={editorState}
+                  config={colorPicker}
+                />
+              )}
               {options.indexOf('link') >= 0 && (
                 <Link
                   editorState={editorState}

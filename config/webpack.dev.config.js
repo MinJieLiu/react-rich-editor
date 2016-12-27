@@ -6,6 +6,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default {
   devtool: 'source-map',
   entry: [
+    'webpack/hot/dev-server',
     'webpack-hot-middleware/client',
     './example/index',
   ],
@@ -19,7 +20,7 @@ export default {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /immutable\.js$|draftjs-utils\.js$|draftjs-to-html\.js$|lodash\.js$/,
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -47,5 +48,10 @@ export default {
   postcss: () => [autoprefixer],
   resolve: {
     extensions: ['', '.js', '.json'],
+  },
+  stats: {
+    colors: true,
+    reasons: true,
+    timings: true,
   },
 };

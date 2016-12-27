@@ -15,6 +15,7 @@ export default {
   },
   externals: {
     react: 'react',
+    immutable: 'immutable',
     'react-dom': 'react-dom',
     'draft-js': 'draft-js',
   },
@@ -39,7 +40,7 @@ export default {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /immutable\.js$|draftjs-utils\.js$/,
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,

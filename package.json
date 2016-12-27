@@ -1,6 +1,6 @@
 {
   "name": "react-rich-editor",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React Rich Text Editor",
   "main": "index.js",
   "directories": {
@@ -69,6 +69,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
+    "immutable": "3.8.1",
     "node-sass": "^3.13.1",
     "postcss-loader": "^1.1.0",
     "react": "^15.3.2",
@@ -82,11 +83,11 @@
     "webpack-hot-middleware": "^2.13.1"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "immutable": "3.8.x"
+    "classnames": "^2.2.5"
   },
   "peerDependencies": {
     "draft-js": "^0.9.x",
+    "immutable": "3.8.x",
     "react": "0.14.x || 15.x",
     "react-dom": "0.14.x || 15.x"
   }

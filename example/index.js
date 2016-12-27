@@ -40,10 +40,9 @@ class Playground extends Component {
       xhr.addEventListener('load', () => {
         const response = JSON.parse(xhr.responseText);
         const link = response.data.img_url + response.data.img_src;
-        const data = {
+        resolve({
           link,
-        };
-        resolve(data);
+        });
       });
       xhr.addEventListener('error', () => {
         const error = JSON.parse(xhr.responseText);
@@ -85,3 +84,7 @@ class Playground extends Component {
 }
 
 ReactDOM.render(<Playground />, document.getElementById('app'));
+
+if (module.hot) {
+  module.hot.accept();
+}

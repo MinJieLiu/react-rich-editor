@@ -33,16 +33,14 @@ class Playground extends Component {
   imageUploadCallBack = file => new Promise(
     (resolve, reject) => {
       const xhr = new XMLHttpRequest(); // eslint-disable-line no-undef
-      xhr.open('POST', 'http://plan.v2.zhinanmao.com/common/uploadImg1');
+      xhr.open('POST', 'https://api.imgur.com/3/image');
+      xhr.setRequestHeader('Authorization', 'Client-ID 8d26ccd12712fca');
       const data = new FormData(); // eslint-disable-line no-undef
-      data.append('file', file);
+      data.append('image', file);
       xhr.send(data);
       xhr.addEventListener('load', () => {
         const response = JSON.parse(xhr.responseText);
-        const link = response.data.img_url + response.data.img_src;
-        resolve({
-          link,
-        });
+        resolve(response.data);
       });
       xhr.addEventListener('error', () => {
         const error = JSON.parse(xhr.responseText);

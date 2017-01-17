@@ -47,12 +47,29 @@ export default class WysiwygEditor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editorState: undefined,
+      editorState: EditorState.createEmpty(),
       toolBarMouseDown: false,
       editorFocused: false,
       editorMouseDown: false,
       toolbar: mergeRecursive(defaultToolbar, props.toolbar),
     };
+
+    // Custom Block Rendering
+    this.customBlockRenderMap = DefaultDraftBlockRenderMap.merge(new Map({
+      unstyled: {
+        element: 'div',
+        aliasedElements: ['p'],
+      },
+      Image: {
+        element: 'img',
+        wrapper: (
+          <Image
+            editorState={this.state.editorState}
+            {...this.props}
+          />
+        ),
+      },
+    }));
   }
 
   componentWillMount() {
@@ -155,12 +172,6 @@ export default class WysiwygEditor extends Component {
       }
     });
   };
-
-  customBlockRenderMap = DefaultDraftBlockRenderMap.merge(new Map({
-    unstyled: {
-      element: 'div',
-    },
-  }));
 
   handleKeyCommand = (command) => {
     const { editorState } = this.state;

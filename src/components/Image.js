@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Entity, AtomicBlockUtils } from 'draft-js';
+import { AtomicBlockUtils } from 'draft-js';
 import classNames from 'classnames';
 import Option from './Option';
 import Spinner from './Spinner';
@@ -43,8 +43,11 @@ export default class Image extends Component {
 
   addImage = (event, imgSrc) => {
     const { editorState, onChange } = this.props;
+    const contentState = editorState.getCurrentContent();
     const src = imgSrc || this.state.imgSrc;
-    const entityKey = Entity.create('IMAGE', 'MUTABLE', { src });
+    const entityKey = contentState
+      .createEntity('IMAGE', 'MUTABLE', { src })
+      .getLastCreatedEntityKey();
     const newEditorState = AtomicBlockUtils.insertAtomicBlock(
       editorState,
       entityKey,
@@ -116,7 +119,12 @@ export default class Image extends Component {
   };
 
   renderAddImageModal() {
-    const { imgSrc, showImageUpload, showImageLoading, dragEnter } = this.state;
+    const {
+      imgSrc,
+      showImageUpload,
+      showImageLoading,
+      dragEnter,
+    } = this.state;
     const { config: { uploadCallback } } = this.props;
     return (
       <div
@@ -148,40 +156,42 @@ export default class Image extends Component {
           </span>
         </div>
         <div className="image-modal-content">
-          {showImageUpload && uploadCallback ? (
-            <div>
-              <div
-                onDragEnter={this.stopPropagationPreventDefault}
-                onDragOver={this.stopPropagationPreventDefault}
-                onDrop={this.onImageDrop}
-                className={classNames(
-                  'image-modal-upload-option',
-                  { 'image-modal-upload-option-highlighted': dragEnter })}
-              >
-                <label
-                  htmlFor="file"
-                  className="image-modal-upload-option-label"
+          {showImageUpload && uploadCallback
+            ? (
+              <div>
+                <div
+                  onDragEnter={this.stopPropagationPreventDefault}
+                  onDragOver={this.stopPropagationPreventDefault}
+                  onDrop={this.onImageDrop}
+                  className={classNames(
+                    'image-modal-upload-option',
+                    { 'image-modal-upload-option-highlighted': dragEnter })}
                 >
-                  点击或将文件拖到这里
-                </label>
+                  <label
+                    htmlFor="file"
+                    className="image-modal-upload-option-label"
+                  >
+                    点击或将文件拖到这里
+                  </label>
+                </div>
+                <input
+                  type="file"
+                  id="file"
+                  onChange={this.selectImage}
+                  className="image-modal-upload-option-input"
+                />
               </div>
-              <input
-                type="file"
-                id="file"
-                onChange={this.selectImage}
-                className="image-modal-upload-option-input"
-              />
-            </div>
-          ) : (
-          <div className="image-modal-url-section">
-            <input
-              className="editor-input"
-              placeholder="请输入图片链接"
-              onChange={this.updateImageSrc}
-              value={imgSrc}
-            />
-          </div>
-          )}
+            )
+            : (
+              <div className="image-modal-url-section">
+                <input
+                  className="editor-input"
+                  placeholder="请输入图片链接"
+                  onChange={this.updateImageSrc}
+                  value={imgSrc}
+                />
+              </div>
+              )}
           <div className="image-modal-btn-section">
             <button
               className="editor-button-primary"

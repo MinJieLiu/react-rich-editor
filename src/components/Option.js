@@ -4,7 +4,7 @@ import classNames from 'classnames';
 export default class Option extends Component {
 
   static propTypes = {
-    onClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func,
     children: PropTypes.any,
     value: PropTypes.string,
     className: PropTypes.string,
@@ -14,14 +14,25 @@ export default class Option extends Component {
   };
 
   onClick = () => {
-    const { disabled, onClick, value } = this.props;
+    const {
+      disabled,
+      onClick,
+      value,
+    } = this.props;
     if (!disabled) {
       onClick(value);
     }
   };
 
   render() {
-    const { children, className, activeClassName, active, disabled } = this.props;
+    const {
+      children,
+      className,
+      activeClassName,
+      active,
+      disabled,
+    } = this.props;
+
     return (
       <div
         className={classNames(

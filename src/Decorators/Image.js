@@ -1,12 +1,26 @@
-import React, { PropTypes, Component } from 'react';
-import { Entity, ContentBlock } from 'draft-js';
+import React, { Component, PropTypes } from 'react';
+import { Entity } from 'draft-js';
 import classNames from 'classnames';
-import Option from '../../components/Option';
+import Option from '../components/Option';
 
-export default class Image extends Component {
+function findImageEntities(contentBlock, callback, contentState) {
+  contentBlock.findEntityRanges(
+    (character) => {
+      const entityKey = character.getEntity();
+      return (
+        entityKey !== null &&
+        contentState.getEntity(entityKey).getType() === 'IMAGE'
+      );
+    },
+    callback,
+  );
+}
+
+class Image extends Component {
 
   static propTypes = {
-    block: PropTypes.instanceOf(ContentBlock).isRequired,
+    contentState: PropTypes.object,
+    entityKey: PropTypes.string,
   };
 
   state = {
@@ -26,44 +40,39 @@ export default class Image extends Component {
   };
 
   setEntityAlignment = (alignment) => {
-    const { block } = this.props;
-    const entityKey = block.getEntityAt(0);
-    Entity.mergeData(
+    const { contentState, entityKey } = this.props;
+    contentState.mergeEntityData(
       entityKey,
       { alignment },
     );
-    this.setState({
-      dummy: true,
-    });
   };
 
   toggleFocused = () => {
-    const focused = this.state.focused;
     this.setState({
-      focused: !focused,
+      focused: !this.state.focused,
     });
   };
 
   renderAlignmentOptions() {
     return (
       <div
-        className="image-alignment-options-popup"
+        className="image-decorator-options-popup"
       >
         <Option
           onClick={this.setEntityAlignmentLeft}
-          className="image-alignment-option"
+          className="image-decorator-option"
         >
           居左
         </Option>
         <Option
           onClick={this.setEntityAlignmentCenter}
-          className="image-alignment-option"
+          className="image-decorator-option"
         >
           居中
         </Option>
         <Option
           onClick={this.setEntityAlignmentRight}
-          className="image-alignment-option"
+          className="image-decorator-option"
         >
           居右
         </Option>
@@ -72,15 +81,23 @@ export default class Image extends Component {
   }
 
   render() {
-    const { block } = this.props;
+    const {
+      contentState,
+      entityKey,
+    } = this.props;
     const { focused } = this.state;
-    const entity = Entity.get(block.getEntityAt(0));
-    const { src, alignment } = entity.getData();
+    const {
+      src,
+      width,
+      height,
+      alignment,
+    } = contentState.getEntity(entityKey).getData();
+
     return (
       <span
         onClick={this.toggleFocused}
         className={classNames(
-          'image-alignment',
+          'image-decorator',
           {
             'image-left': alignment === 'left',
             'image-right': alignment === 'right',
@@ -88,15 +105,17 @@ export default class Image extends Component {
           },
         )}
       >
-        <span className="image-alignment-wrapper">
+        <span className="image-decorator-wrapper">
           <img
             src={src}
             role="presentation"
             className={classNames(
-              'image-alignment-image', {
-                'image-alignment-image-focus': !!focused,
+              'image-decorator-image', {
+                'image-decorator-image-focus': focused,
               },
             )}
+            width={width}
+            height={height}
           />
           {
             focused ?
@@ -109,3 +128,8 @@ export default class Image extends Component {
     );
   }
 }
+
+export default {
+  strategy: findImageEntities,
+  component: Image,
+};

@@ -1,14 +1,13 @@
 import React, { PropTypes, Component } from 'react';
-import { Entity } from 'draft-js';
-import openlink from '../../../static/images/openlink.svg';
+import openlink from '../../static/images/openlink.svg';
 
-function findLinkEntities(contentBlock, callback) {
+function findLinkEntities(contentBlock, callback, contentState) {
   contentBlock.findEntityRanges(
     (character) => {
       const entityKey = character.getEntity();
       return (
         entityKey !== null &&
-        Entity.get(entityKey).getType() === 'LINK'
+        contentState.getEntity(entityKey).getType() === 'LINK'
       );
     },
     callback,
@@ -18,7 +17,8 @@ function findLinkEntities(contentBlock, callback) {
 class Link extends Component {
 
   static propTypes = {
-    entityKey: PropTypes.string.isRequired,
+    entityKey: PropTypes.string,
+    contentState: PropTypes.object,
     children: PropTypes.array,
   };
 
@@ -27,8 +27,8 @@ class Link extends Component {
   };
 
   openLink = () => {
-    const { entityKey } = this.props;
-    const { url } = Entity.get(entityKey).getData();
+    const { entityKey, contentState } = this.props;
+    const { url } = contentState.getEntity(entityKey).getData();
     const linkTab = window.open(url, 'blank'); // eslint-disable-line no-undef
     linkTab.focus();
   };

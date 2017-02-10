@@ -29,7 +29,7 @@ import Emoji from './Emoji';
 import Image from './Image';
 import History from './History';
 import LinkDecorator from '../Decorators/Link';
-import ImageBlockRenderer from '../Renderer/Image';
+import ImageDecorator from '../Decorators/Image';
 import defaultToolbar from '../config/defaultToolbar';
 
 export default class WysiwygEditor extends Component {
@@ -60,21 +60,12 @@ export default class WysiwygEditor extends Component {
         element: 'div',
         aliasedElements: ['p'],
       },
-      Image: {
-        element: 'img',
-        wrapper: (
-          <Image
-            editorState={this.state.editorState}
-            {...this.props}
-          />
-        ),
-      },
     }));
   }
 
   componentWillMount() {
     let editorState;
-    const decorator = new CompositeDecorator([LinkDecorator]);
+    const decorator = new CompositeDecorator([LinkDecorator, ImageDecorator]);
     if (this.props.rawContentState) {
       const contentState = convertFromRaw(this.props.rawContentState);
       editorState = EditorState.createWithContent(contentState, decorator);
@@ -337,7 +328,6 @@ export default class WysiwygEditor extends Component {
             blockStyleFn={blockStyleFn}
             customStyleMap={customStyleMap}
             handleReturn={this.handleReturn}
-            blockRendererFn={ImageBlockRenderer}
             blockRenderMap={this.customBlockRenderMap}
             handleKeyCommand={this.handleKeyCommand}
           />

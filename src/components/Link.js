@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Entity, RichUtils, EditorState, Modifier } from 'draft-js';
+import { RichUtils, EditorState, Modifier } from 'draft-js';
 import {
   getSelectionText,
   getEntityRange,
@@ -13,8 +13,8 @@ import DropdownOption from './DropdownOption';
 export default class Link extends Component {
 
   static propTypes = {
-    editorState: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired,
+    editorState: PropTypes.object,
+    onChange: PropTypes.func,
     config: PropTypes.object,
   };
 
@@ -44,13 +44,14 @@ export default class Link extends Component {
 
   toggleLinkModal = () => {
     const { editorState } = this.props;
+    const contentState = editorState.getCurrentContent();
     const { showModal, currentEntity } = this.state;
     const newState = {};
     newState.showModal = !showModal;
     if (newState.showModal) {
       newState.entity = currentEntity;
       const entityRange = currentEntity && getEntityRange(editorState, currentEntity);
-      newState.linkTarget = currentEntity && Entity.get(currentEntity).get('data').url;
+      newState.linkTarget = currentEntity && contentState.getEntity(currentEntity).get('data').url;
       newState.linkTitle = (entityRange && entityRange.text) ||
         getSelectionText(editorState);
     }
@@ -77,6 +78,7 @@ export default class Link extends Component {
 
   addLink = () => {
     const { editorState, onChange } = this.props;
+    const thecontentState = editorState.getCurrentContent();
     const { linkTitle, linkTarget, currentEntity } = this.state;
     let selection = editorState.getSelection();
 
@@ -87,12 +89,12 @@ export default class Link extends Component {
         focusOffset: entityRange.end,
       });
     }
-    const entityKey = Entity.create('LINK', 'MUTABLE', {
+    const entityKey = thecontentState.createEntity('LINK', 'MUTABLE', {
       title: linkTitle,
       url: linkTarget,
-    });
+    }).getLastCreatedEntityKey();
     const contentState = Modifier.replaceText(
-      editorState.getCurrentContent(),
+      thecontentState,
       selection,
       `${linkTitle}`,
       editorState.getCurrentInlineStyle(),

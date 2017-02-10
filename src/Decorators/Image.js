@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { Entity } from 'draft-js';
 import classNames from 'classnames';
 import Option from '../components/Option';
 

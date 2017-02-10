@@ -48,9 +48,6 @@ export default {
   postcss: () => [autoprefixer],
   resolve: {
     extensions: ['', '.js', '.json'],
-    alias: {
-      'draft-js': 'zj-draft-js',
-    },
   },
   stats: {
     colors: true,

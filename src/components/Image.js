@@ -80,7 +80,7 @@ export default class Image extends Component {
     const { showModal } = this.state;
     const newState = {};
     newState.showModal = !showModal;
-    newState.imgSrc = undefined;
+    newState.imgSrc = '';
     this.setState(newState);
   };
 

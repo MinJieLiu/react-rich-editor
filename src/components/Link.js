@@ -52,7 +52,9 @@ export default class Link extends Component {
     if (newState.showModal) {
       newState.entity = currentEntity;
       const entityRange = currentEntity && getEntityRange(editorState, currentEntity);
-      newState.linkTarget = currentEntity && contentState.getEntity(currentEntity).get('data').url;
+      newState.linkTarget = currentEntity
+        ? contentState.getEntity(currentEntity).get('data').url
+        : '';
       newState.linkTitle = (entityRange && entityRange.text) ||
         getSelectionText(editorState);
     }
@@ -65,21 +67,16 @@ export default class Link extends Component {
     });
   };
 
-  updateLinkTitle = (e) => {
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
     this.setState({
-      linkTitle: e.target.value,
-    });
-  };
-
-  updateLinkTarget = (e) => {
-    this.setState({
-      linkTarget: e.target.value,
+      [name]: value,
     });
   };
 
   addLink = () => {
     const { editorState, onChange } = this.props;
-    const thecontentState = editorState.getCurrentContent();
+    const theContentState = editorState.getCurrentContent();
     const { linkTitle, linkTarget, currentEntity } = this.state;
     let selection = editorState.getSelection();
 
@@ -90,12 +87,12 @@ export default class Link extends Component {
         focusOffset: entityRange.end,
       });
     }
-    const entityKey = thecontentState.createEntity('LINK', 'MUTABLE', {
+    const entityKey = theContentState.createEntity('LINK', 'MUTABLE', {
       title: linkTitle,
       url: linkTarget,
     }).getLastCreatedEntityKey();
     const contentState = Modifier.replaceText(
-      thecontentState,
+      theContentState,
       selection,
       linkTitle,
       editorState.getCurrentInlineStyle(),
@@ -136,7 +133,8 @@ export default class Link extends Component {
           <span className="link-modal-label">文字</span>
           <input
             className="editor-input"
-            onChange={this.updateLinkTitle}
+            onChange={this.handleInputChange}
+            name="linkTitle"
             value={linkTitle}
           />
         </div>
@@ -144,7 +142,8 @@ export default class Link extends Component {
           <span className="link-modal-label">链接</span>
           <input
             className="editor-input"
-            onChange={this.updateLinkTarget}
+            onChange={this.handleInputChange}
+            name="linkTarget"
             value={linkTarget}
           />
         </div>
@@ -152,7 +151,7 @@ export default class Link extends Component {
           <button
             className="editor-button-primary"
             onClick={this.addLink}
-            disabled={!linkTarget || !linkTitle}
+            disabled={!(linkTitle && linkTarget)}
           >
             插入
           </button>

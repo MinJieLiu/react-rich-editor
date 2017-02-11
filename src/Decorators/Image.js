@@ -46,9 +46,9 @@ class Image extends Component {
     );
   };
 
-  toggleFocused = () => {
+  handleFocus = (focused) => {
     this.setState({
-      focused: !this.state.focused,
+      focused,
     });
   };
 
@@ -94,7 +94,6 @@ class Image extends Component {
 
     return (
       <span
-        onClick={this.toggleFocused}
         className={classNames(
           'image-decorator',
           {
@@ -103,6 +102,12 @@ class Image extends Component {
             'image-center': !alignment || alignment === 'none',
           },
         )}
+        onMouseEnter={() => {
+          this.handleFocus(true);
+        }}
+        onMouseLeave={() => {
+          this.handleFocus(false);
+        }}
       >
         <span className="image-decorator-wrapper">
           <img

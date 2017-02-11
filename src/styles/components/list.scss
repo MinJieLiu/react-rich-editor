@@ -1,14 +1,6 @@
 @import "./variables";
 
-.list {
-  &-wrapper {
-  }
-
-  &-dropdown {
-    width: 50px;
-    z-index: 90;
-  }
-
-  &-dropdown-option {
-  }
+.list-dropdown {
+  width: 50px;
+  z-index: 90;
 }

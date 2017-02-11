@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { RichUtils } from 'draft-js';
+import classNames from 'classnames';
 import { getSelectedBlocksType } from '../utils';
 import Dropdown from './Dropdown';
 import DropdownOption from './DropdownOption';
@@ -7,7 +8,7 @@ import DropdownOption from './DropdownOption';
 export default class Block extends Component {
 
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     editorState: PropTypes.object,
     config: PropTypes.object,
   };
@@ -65,9 +66,13 @@ export default class Block extends Component {
     const currentLabel = currentBlockData && currentBlockData[0] && currentBlockData[0].label;
     const { config: { className } } = this.props;
     return (
-      <div className="tool-item block-wrapper">
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+      >
         <Dropdown
-          className={`block-dropdown ${className}`}
+          className="block-dropdown"
           onChange={this.toggleBlockType}
         >
           <span>{currentLabel}</span>

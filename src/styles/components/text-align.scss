@@ -1,28 +1,6 @@
 @import "./variables";
 
-.text-align {
-
-  &-wrapper {
-  }
-
-  &-dropdown {
-    width: 50px;
-    z-index: 90;
-  }
-
-  &-dropdown-option {
-  }
-
-}
-
-.right-aligned-block {
-}
-
-.left-aligned-block {
-}
-
-.center-aligned-block {
-}
-
-.justify-aligned-block {
+.text-align-dropdown {
+  width: 50px;
+  z-index: 90;
 }

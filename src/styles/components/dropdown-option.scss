@@ -3,7 +3,8 @@
 .dropdown-option {
 
   &-default {
-    padding: 12px 18px;
+    display: block;
+    padding: 10px 15px;
 
     &:active {
       background: $editor-active-color;

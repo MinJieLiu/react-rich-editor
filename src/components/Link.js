@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { RichUtils, EditorState, Modifier } from 'draft-js';
+import classNames from 'classnames';
 import {
   getSelectionText,
   getEntityRange,
@@ -96,7 +97,7 @@ export default class Link extends Component {
     const contentState = Modifier.replaceText(
       thecontentState,
       selection,
-      `${linkTitle}`,
+      linkTitle,
       editorState.getCurrentInlineStyle(),
       entityKey,
     );
@@ -169,11 +170,15 @@ export default class Link extends Component {
   renderInFlatList(showModal, currentEntity, config) {
     const { options, link, unlink, className } = config;
     return (
-      <div className={`tool-item link-wrapper ${className}`}>
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+      >
         {options.indexOf('link') >= 0 && (
           <Option
-            value="unordered-list-item"
             className={link.className}
+            value="unordered-list-item"
             onClick={this.toggleLinkModal}
           >
             <img
@@ -184,9 +189,9 @@ export default class Link extends Component {
         )}
         {options.indexOf('unlink') >= 0 && (
           <Option
+            className={unlink.className}
             disabled={!currentEntity}
             value="ordered-list-item"
-            className={unlink.className}
             onClick={this.removeLink}
           >
             <img
@@ -201,11 +206,21 @@ export default class Link extends Component {
   }
 
   renderInDropDown(showModal, currentEntity, config) {
-    const { options, link, unlink, className } = config;
+    const {
+      options,
+      link,
+      unlink,
+      className,
+    } = config;
     return (
-      <div className="tool-item link-wrapper" onClick={this.hideLinkModal}>
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+        onClick={this.hideLinkModal}
+      >
         <Dropdown
-          className={`link-dropdown ${className}`}
+          className="link-dropdown"
           onChange={this.toggleInlineStyle}
         >
           <img
@@ -214,8 +229,8 @@ export default class Link extends Component {
           />
           {options.indexOf('link') >= 0 && (
             <DropdownOption
+              className={link.className}
               onClick={this.toggleLinkModal}
-              className={`link-dropdown-option ${link.className}`}
             >
               <img
                 src={link.icon}
@@ -225,9 +240,9 @@ export default class Link extends Component {
           )}
           {options.indexOf('unlink') >= 0 && (
             <DropdownOption
+              className={unlink.className}
               onClick={this.removeLink}
               disabled={!currentEntity}
-              className={`link-dropdown-option ${unlink.className}`}
             >
               <img
                 src={unlink.icon}

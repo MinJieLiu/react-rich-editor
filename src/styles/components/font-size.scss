@@ -1,15 +1,9 @@
 @import "./variables";
 
-.font-size {
+.font-size-dropdown {
+  min-width: 60px;
+}
 
-  &-wrapper {
-  }
-
-  &-dropdown {
-    min-width: 60px;
-  }
-
-  &-option {
-  }
-
+.font-size-text {
+  padding: 0 10px;
 }

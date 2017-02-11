@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { EditorState, Modifier } from 'draft-js';
+import classNames from 'classnames';
 import { inlineStyles } from '../utils';
 import Option from './Option';
 
 export default class Remove extends Component {
 
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    editorState: PropTypes.object.isRequired,
+    onChange: PropTypes.func,
+    editorState: PropTypes.object,
     config: PropTypes.object,
   };
 
@@ -31,9 +32,12 @@ export default class Remove extends Component {
   render() {
     const { config: { icon, className } } = this.props;
     return (
-      <div className="tool-item remove-wrapper">
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+      >
         <Option
-          className={className}
           onClick={this.removeInlineStyles}
         >
           <img

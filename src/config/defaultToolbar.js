@@ -16,7 +16,6 @@ import color from '../../static/images/color.svg';
 import eraser from '../../static/images/eraser.svg';
 import link from '../../static/images/link.svg';
 import unlink from '../../static/images/unlink.svg';
-import emoji from '../../static/images/emoji.svg';
 import image from '../../static/images/image.svg';
 import undo from '../../static/images/undo.svg';
 import redo from '../../static/images/redo.svg';
@@ -37,7 +36,6 @@ export default {
     'textAlign',
     'colorPicker',
     'link',
-    'emoji',
     'image',
     'remove',
     'history',
@@ -83,7 +81,6 @@ export default {
     link: { icon: link, className: '' },
     unlink: { icon: unlink, className: '' },
   },
-  emoji: { icon: emoji, className: '' },
   image: { icon: image, uploadCallback: '', className: '' },
   remove: { icon: eraser, className: '' },
   history: {

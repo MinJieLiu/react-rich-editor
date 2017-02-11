@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { EditorState } from 'draft-js';
+import classNames from 'classnames';
 import { getFirstIcon } from '../utils';
 import Option from './Option';
 import Dropdown from './Dropdown';
@@ -8,7 +9,7 @@ import DropdownOption from './DropdownOption';
 export default class History extends Component {
 
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     editorState: PropTypes.object,
     config: PropTypes.object,
   };
@@ -55,10 +56,17 @@ export default class History extends Component {
   };
 
   renderInDropDown(undoDisabled, redoDisabled, config) {
-    const { options, undo, redo, className } = config;
+    const {
+      options,
+      undo,
+      redo,
+      className,
+    } = config;
     return (
       <Dropdown
-        className={`tool-item history-dropdown ${className}`}
+        className={classNames('tool-item history-dropdown', {
+          [className]: !!className,
+        })}
         onChange={this.toggleInlineStyle}
       >
         <img
@@ -67,9 +75,9 @@ export default class History extends Component {
         />
         {options.indexOf('undo') >= 0 && (
           <DropdownOption
+            className={undo.className}
             onClick={this.undo}
             disabled={undoDisabled}
-            className={`history-dropdown-option ${undo.className}`}
           >
             <img
               src={undo.icon}
@@ -79,9 +87,9 @@ export default class History extends Component {
         )}
         {options.indexOf('redo') >= 0 && (
           <DropdownOption
+            className={redo.className}
             onClick={this.redo}
             disabled={redoDisabled}
-            className={`history-dropdown-option ${redo.className}`}
           >
             <img
               src={redo.icon}
@@ -94,14 +102,23 @@ export default class History extends Component {
   }
 
   renderInFlatList(undoDisabled, redoDisabled, config) {
-    const { options, undo, redo, className } = config;
+    const {
+      options,
+      undo,
+      redo,
+      className,
+    } = config;
     return (
-      <div className={`tool-item history-wrapper ${className}`}>
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+      >
         {options.indexOf('undo') >= 0 && (
           <Option
+            className={undo.className}
             value="unordered-list-item"
             onClick={this.undo}
-            className={undo.className}
             disabled={undoDisabled}
           >
             <img
@@ -112,9 +129,9 @@ export default class History extends Component {
         )}
         {options.indexOf('redo') >= 0 && (
           <Option
+            className={redo.className}
             value="ordered-list-item"
             onClick={this.redo}
-            className={redo.className}
             disabled={redoDisabled}
           >
             <img

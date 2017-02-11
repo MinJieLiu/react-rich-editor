@@ -2,18 +2,13 @@
 
 .font-family {
 
-  &-wrapper {
-  }
-
   &-dropdown {
     width: 120px;
   }
 
-  &-option {
-  }
-
-  &-placeholder {
+  &-text {
     display: inline-block;
+    padding: 0 10px;
     max-width: 90px;
     white-space: nowrap;
     text-overflow: ellipsis;

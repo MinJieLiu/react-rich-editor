@@ -7,8 +7,8 @@ import Spinner from './Spinner';
 export default class Image extends Component {
 
   static propTypes = {
-    editorState: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired,
+    editorState: PropTypes.object,
+    onChange: PropTypes.func,
     config: PropTypes.object,
   };
 
@@ -34,8 +34,8 @@ export default class Image extends Component {
     this.uploadImage(event.dataTransfer.files[0]);
   };
 
-  onDragEnter = (event) => {
-    this.stopPropagation(event);
+  onDragEnter = (e) => {
+    this.stopPropagationPreventDefault(e);
     this.setState({
       dragEnter: true,
     });
@@ -160,7 +160,7 @@ export default class Image extends Component {
             ? (
               <div>
                 <div
-                  onDragEnter={this.stopPropagationPreventDefault}
+                  onDragEnter={this.onDragEnter}
                   onDragOver={this.stopPropagationPreventDefault}
                   onDrop={this.onImageDrop}
                   className={classNames(
@@ -221,9 +221,12 @@ export default class Image extends Component {
     const { config: { icon, className } } = this.props;
     const { showModal } = this.state;
     return (
-      <div className="tool-item image-wrapper">
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+      >
         <Option
-          className={className}
           value="unordered-list-item"
           onClick={this.toggleModal}
         >

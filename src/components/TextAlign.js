@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 import {
   getSelectedBlocksMetadata,
   setBlockData,
@@ -11,8 +12,8 @@ import DropdownOption from './DropdownOption';
 export default class TextAlign extends Component {
 
   static propTypes = {
-    editorState: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired,
+    editorState: PropTypes.object,
+    onChange: PropTypes.func,
     config: PropTypes.object,
   };
 
@@ -40,13 +41,24 @@ export default class TextAlign extends Component {
 
   renderInFlatList(config) {
     const { currentTextAlignment } = this.state;
-    const { options, left, center, right, justify, className } = config;
+    const {
+      options,
+      left,
+      center,
+      right,
+      justify,
+      className,
+    } = config;
     return (
-      <div className={`tool-item text-align-wrapper ${className}`}>
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+      >
         {options.indexOf('left') >= 0 && (
           <Option
-            value="left"
             className={left.className}
+            value="left"
             active={currentTextAlignment === 'left'}
             onClick={this.addBlockAlignmentData}
           >
@@ -58,8 +70,8 @@ export default class TextAlign extends Component {
         )}
         {options.indexOf('center') >= 0 && (
           <Option
-            value="center"
             className={center.className}
+            value="center"
             active={currentTextAlignment === 'center'}
             onClick={this.addBlockAlignmentData}
           >
@@ -71,8 +83,8 @@ export default class TextAlign extends Component {
         )}
         {options.indexOf('right') >= 0 && (
           <Option
-            value="right"
             className={right.className}
+            value="right"
             active={currentTextAlignment === 'right'}
             onClick={this.addBlockAlignmentData}
           >
@@ -84,8 +96,8 @@ export default class TextAlign extends Component {
         )}
         {options.indexOf('justify') >= 0 && (
           <Option
-            value="justify"
             className={justify.className}
+            value="justify"
             active={currentTextAlignment === 'justify'}
             onClick={this.addBlockAlignmentData}
           >
@@ -101,10 +113,19 @@ export default class TextAlign extends Component {
 
   renderInDropDown(config) {
     const { currentTextAlignment } = this.state;
-    const { options, left, center, right, justify, className } = config;
+    const {
+      options,
+      left,
+      center,
+      right,
+      justify,
+      className,
+    } = config;
     return (
       <Dropdown
-        className={`tool-item text-align-dropdown ${className}`}
+        className={classNames('tool-item text-align-dropdown', {
+          [className]: !!className,
+        })}
         onChange={this.addBlockAlignmentData}
       >
         <img
@@ -113,9 +134,9 @@ export default class TextAlign extends Component {
         />
         {options.indexOf('left') >= 0 && (
           <DropdownOption
+            className={left.className}
             value="left"
             active={currentTextAlignment === 'left'}
-            className={`text-align-dropdown-option ${left.className}`}
           >
             <img
               src={left.icon}
@@ -125,9 +146,9 @@ export default class TextAlign extends Component {
         )}
         {options.indexOf('center') >= 0 && (
           <DropdownOption
+            className={center.className}
             value="center"
             active={currentTextAlignment === 'center'}
-            className={`text-align-dropdown-option ${center.className}`}
           >
             <img
               src={center.icon}
@@ -137,9 +158,9 @@ export default class TextAlign extends Component {
         )}
         {options.indexOf('right') >= 0 && (
           <DropdownOption
+            className={right.className}
             value="right"
             active={currentTextAlignment === 'right'}
-            className={`text-align-dropdown-option ${right.className}`}
           >
             <img
               src={right.icon}
@@ -149,9 +170,9 @@ export default class TextAlign extends Component {
         )}
         {options.indexOf('justify') >= 0 && (
           <DropdownOption
+            className={justify.className}
             value="justify"
             active={currentTextAlignment === 'justify'}
-            className={`text-align-dropdown-option ${justify.className}`}
           >
             <img
               src={justify.icon}

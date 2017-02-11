@@ -1,17 +1,5 @@
 @import "./variables";
 
-$prefix-cls: inline;
-
-.#{$prefix-cls} {
-
-  &-wrapper {
-  }
-
-  &-dropdown {
-    width: 50px;
-  }
-
-  &-dropdown-option {
-  }
-
+.inline-dropdown {
+  width: 50px;
 }

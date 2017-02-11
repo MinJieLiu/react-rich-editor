@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 import {
   fontSizes,
   toggleCustomInlineStyle,
@@ -56,13 +57,17 @@ export default class FontSize extends Component {
     const currentFontSizeNumber = currentFontSize
       && Number(currentFontSize.substring(9, currentFontSize.length));
     return (
-      <div className="tool-item font-size-wrapper">
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+      >
         <Dropdown
-          className={`font-size-dropdown ${className}`}
+          className="font-size-dropdown"
           onChange={this.toggleFontSize}
         >
           {currentFontSizeNumber ?
-            <span>{currentFontSizeNumber}</span>
+            <span className="font-size-text">{currentFontSizeNumber}</span>
             :
             <img
               src={icon}
@@ -73,7 +78,6 @@ export default class FontSize extends Component {
             fontSizes.map((size, index) => (
               <DropdownOption
                 key={index}
-                className="font-size-option"
                 active={currentFontSize === size}
                 value={`fontsize-${size}`}
               >

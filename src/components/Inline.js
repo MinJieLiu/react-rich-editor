@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { RichUtils, EditorState, Modifier } from 'draft-js';
+import classNames from 'classnames';
 import {
   getSelectionInlineStyle,
   getFirstIcon,
@@ -11,8 +12,8 @@ import DropdownOption from './DropdownOption';
 export default class Inline extends Component {
 
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    editorState: PropTypes.object.isRequired,
+    onChange: PropTypes.func,
+    editorState: PropTypes.object,
     config: PropTypes.object,
   };
 
@@ -60,7 +61,11 @@ export default class Inline extends Component {
 
   renderInFlatList(currentStyles, config) {
     return (
-      <div className={`tool-item inline-wrapper ${config.className}`}>
+      <div
+        className={classNames('tool-item', {
+          [config.className]: !!config.className,
+        })}
+      >
         {
           config.options
             .map((style, index) => (
@@ -85,7 +90,9 @@ export default class Inline extends Component {
   renderInDropDown(currentStyles, config) {
     return (
       <Dropdown
-        className={`tool-item inline-dropdown ${config.className}`}
+        className={classNames('tool-item inline-dropdown', {
+          [config.className]: !!config.className,
+        })}
         onChange={this.toggleInlineStyle}
       >
         <img
@@ -98,7 +105,7 @@ export default class Inline extends Component {
               <DropdownOption
                 key={index}
                 value={style.toUpperCase()}
-                className={`inline-dropdown-option ${config[style].className}`}
+                className={config[style].className}
                 active={currentStyles[style.toUpperCase()] === true}
               >
                 <img

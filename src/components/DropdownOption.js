@@ -20,7 +20,12 @@ export default class DropdownOption extends Component {
   };
 
   onClick = (event) => {
-    const { onSelect, onClick, value, disabled } = this.props;
+    const {
+      onSelect,
+      onClick,
+      value,
+      disabled,
+    } = this.props;
     if (!disabled) {
       if (onSelect) {
         onSelect(value);

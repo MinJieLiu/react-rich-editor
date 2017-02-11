@@ -68,14 +68,20 @@ export default class Dropdown extends Component {
   };
 
   render() {
-    const { children, className, optionWrapperClassName } = this.props;
+    const {
+      children,
+      className,
+      optionWrapperClassName,
+    } = this.props;
     const { expanded, highlighted } = this.state;
     const options = children.slice(1, children.length);
     return (
       <div
+        className={classNames('dropdown-wrapper', {
+          [className]: !!className,
+        })}
         tabIndex="0"
         onKeyDown={this.onKeyDown}
-        className={`dropdown-wrapper ${className}`}
         onMouseLeave={this.collapse}
       >
         <a
@@ -92,7 +98,9 @@ export default class Dropdown extends Component {
         </a>
         {expanded ? (
           <ul
-            className={`dropdown-option-wrapper ${optionWrapperClassName}`}
+            className={classNames('dropdown-option-wrapper', {
+              [optionWrapperClassName]: !!optionWrapperClassName,
+            })}
           >
             {React.Children.map(options, (option, index) => (
               option && React.cloneElement(

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 import {
   fontFamilies,
   toggleCustomInlineStyle,
@@ -10,7 +11,7 @@ import DropdownOption from './DropdownOption';
 export default class FontFamily extends Component {
 
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     editorState: PropTypes.object,
     config: PropTypes.object,
   };
@@ -55,19 +56,22 @@ export default class FontFamily extends Component {
     const currentFontFamilyStr =
       currentFontFamily && currentFontFamily.substring(11, currentFontFamily.length);
     return (
-      <div className="tool-item font-family-wrapper">
+      <div
+        className={classNames('tool-item', {
+          [className]: !!className,
+        })}
+      >
         <Dropdown
-          className={`font-family-dropdown ${className}`}
+          className="font-family-dropdown"
           onChange={this.toggleFontFamily}
           optionWrapperClassName="font-family-option-wrapper"
         >
-          <span className="font-family-placeholder">
+          <span className="font-family-text">
             {currentFontFamilyStr || '字体'}
           </span>
           {
             fontFamilies.map((family, index) => (
               <DropdownOption
-                className="font-family-option"
                 active={currentFontFamilyStr === family}
                 value={`fontfamily-${family}`}
                 key={index}

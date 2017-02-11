@@ -10,8 +10,8 @@ import Option from './Option';
 export default class ColorPicker extends Component {
 
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    editorState: PropTypes.object.isRequired,
+    onChange: PropTypes.func,
+    editorState: PropTypes.object,
     config: PropTypes.object,
   };
 

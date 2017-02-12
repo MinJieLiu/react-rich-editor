@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import openlink from '../../static/images/openlink.svg';
+import openLink from '../../static/images/openlink.svg';
 
 function findLinkEntities(contentBlock, callback, contentState) {
   contentBlock.findEntityRanges(
@@ -52,7 +52,7 @@ class Link extends Component {
         <span className="link-decorator-link">{children}</span>
         {showPopOver ?
           <img
-            src={openlink}
+            src={openLink}
             role="presentation"
             onClick={this.openLink}
             className="link-decorator-icon"

@@ -15,7 +15,8 @@
     width: 100%;
     color: $editor-black-color;
     box-shadow: $editor-box-shadow;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     img {
       max-width: 100%;
@@ -39,6 +40,15 @@
       float: left;
       margin: 0 4px;
       height: 36px;
+
+      img {
+        margin: 0 10px;
+        vertical-align: middle;
+      }
+
+      .dropdown-option-wrapper img {
+        margin: 0;
+      }
     }
 
     &:after {

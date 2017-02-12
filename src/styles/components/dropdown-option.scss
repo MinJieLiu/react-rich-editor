@@ -6,6 +6,10 @@
     display: block;
     padding: 10px 15px;
 
+    img {
+      margin: 0;
+    }
+
     &:active {
       background: $editor-active-color;
     }

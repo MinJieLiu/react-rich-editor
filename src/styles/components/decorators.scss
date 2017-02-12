@@ -22,7 +22,7 @@
 
 .image-decorator {
   position: relative;
-  display: inline-block;
+  display: block;
 
   &:after {
     content: '';
@@ -47,20 +47,19 @@
 
   &-options-popup {
     position: absolute;
+    top: 100%;
+    left: 0;
     display: table;
-    left: 50%;
     background: white;
     box-shadow: $editor-box-shadow;
     cursor: pointer;
-    transform: translate(-50%);
+    white-space: nowrap;
     z-index: 100;
   }
 
   &-option {
-    padding: 8px 16px;
-    width: auto;
-    height: auto;
-    line-height: inherit;
+    padding: 10px 15px;
+    line-height: 1;
   }
 }
 

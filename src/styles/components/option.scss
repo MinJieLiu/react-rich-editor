@@ -12,11 +12,6 @@
     user-select: none;
     cursor: pointer;
 
-    img {
-      margin: 0 10px;
-      vertical-align: middle;
-    }
-
     &:hover {
       background-color: $editor-hover-color;
     }

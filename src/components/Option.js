@@ -7,6 +7,7 @@ export default class Option extends Component {
     onClick: PropTypes.func,
     children: PropTypes.any,
     value: PropTypes.string,
+    title: PropTypes.string,
     className: PropTypes.string,
     activeClassName: PropTypes.string,
     active: PropTypes.bool,
@@ -28,6 +29,7 @@ export default class Option extends Component {
     const {
       children,
       className,
+      title,
       activeClassName,
       active,
       disabled,
@@ -44,6 +46,7 @@ export default class Option extends Component {
           },
         )}
         onClick={this.onClick}
+        title={title}
       >
         {children}
       </div>

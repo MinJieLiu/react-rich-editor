@@ -1,5 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import { RichUtils, EditorState, Modifier } from 'draft-js';
+import {
+  RichUtils,
+  EditorState,
+  Modifier,
+} from 'draft-js';
 import classNames from 'classnames';
 import {
   getSelectionText,

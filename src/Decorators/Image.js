@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import Option from '../components/Option';
+import left from '../../static/images/align-left.svg';
+import center from '../../static/images/align-center.svg';
+import right from '../../static/images/align-right.svg';
 
 function findImageEntities(contentBlock, callback, contentState) {
   contentBlock.findEntityRanges(
@@ -24,6 +27,7 @@ class Image extends Component {
 
   state = {
     focused: false,
+    alignment: 'none',
   };
 
   setEntityAlignmentLeft = () => {
@@ -44,6 +48,9 @@ class Image extends Component {
       entityKey,
       { alignment },
     );
+    this.setState({
+      alignment,
+    });
   };
 
   handleFocus = (focused) => {
@@ -61,19 +68,28 @@ class Image extends Component {
           onClick={this.setEntityAlignmentLeft}
           className="image-decorator-option"
         >
-          居左
+          <img
+            src={left}
+            role="presentation"
+          />
         </Option>
         <Option
           onClick={this.setEntityAlignmentCenter}
           className="image-decorator-option"
         >
-          居中
+          <img
+            src={center}
+            role="presentation"
+          />
         </Option>
         <Option
           onClick={this.setEntityAlignmentRight}
           className="image-decorator-option"
         >
-          居右
+          <img
+            src={right}
+            role="presentation"
+          />
         </Option>
       </div>
     );
@@ -122,10 +138,9 @@ class Image extends Component {
             height={height}
           />
           {
-            focused ?
-              this.renderAlignmentOptions()
-              :
-              undefined
+            focused
+              ? this.renderAlignmentOptions()
+              : undefined
           }
         </span>
       </span>

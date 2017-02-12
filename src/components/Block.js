@@ -75,7 +75,7 @@ export default class Block extends Component {
           className="block-dropdown"
           onChange={this.toggleBlockType}
         >
-          <span>{currentLabel}</span>
+          <span className="block-text">{currentLabel}</span>
           {
             this.blocksTypes.map((block, index) => (
               <DropdownOption

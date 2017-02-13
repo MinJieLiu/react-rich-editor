@@ -94,6 +94,7 @@ export default class Link extends Component {
     const entityKey = theContentState.createEntity('LINK', 'MUTABLE', {
       title: linkTitle,
       url: linkTarget,
+      target: '_blank',
     }).getLastCreatedEntityKey();
     const contentState = Modifier.replaceText(
       theContentState,
@@ -120,8 +121,8 @@ export default class Link extends Component {
     }
   };
 
-  stopPropagation = (event) => {
-    event.stopPropagation();
+  stopPropagation = (e) => {
+    e.stopPropagation();
   };
 
   renderAddLinkModal() {

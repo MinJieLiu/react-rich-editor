@@ -1,4 +1,3 @@
-
 import {
   EditorState,
   RichUtils,

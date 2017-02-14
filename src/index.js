@@ -1,4 +1,7 @@
-import './styles/index.scss';
-import Editor from './components';
+/**
+ * index
+ */
 
-export default Editor;
+import './styles/index.scss';
+
+export default from './components';

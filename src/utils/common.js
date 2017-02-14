@@ -3,11 +3,9 @@
  */
 export function forEach(obj, callback) {
   if (obj) {
-    for (const key in obj) { // eslint-disable-line no-restricted-syntax
-      if ({}.hasOwnProperty.call(obj, key)) {
-        callback(key, obj[key]);
-      }
-    }
+    Object.keys(obj).forEach((key) => {
+      callback(key, obj[key]);
+    });
   }
 }
 

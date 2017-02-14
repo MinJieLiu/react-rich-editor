@@ -61,7 +61,7 @@ class Image extends Component {
 
   renderAlignmentOptions() {
     return (
-      <div
+      <span
         className="image-decorator-options-popup"
       >
         <Option
@@ -91,7 +91,7 @@ class Image extends Component {
             role="presentation"
           />
         </Option>
-      </div>
+      </span>
     );
   }
 
@@ -109,7 +109,7 @@ class Image extends Component {
     } = contentState.getEntity(entityKey).getData();
 
     return (
-      <span
+      <div
         className={classNames(
           'image-decorator',
           {
@@ -118,14 +118,16 @@ class Image extends Component {
             'image-center': !alignment || alignment === 'none',
           },
         )}
-        onMouseEnter={() => {
-          this.handleFocus(true);
-        }}
-        onMouseLeave={() => {
-          this.handleFocus(false);
-        }}
       >
-        <span className="image-decorator-wrapper">
+        <span
+          className="image-decorator-wrapper"
+          onMouseEnter={() => {
+            this.handleFocus(true);
+          }}
+          onMouseLeave={() => {
+            this.handleFocus(false);
+          }}
+        >
           <img
             src={src}
             role="presentation"
@@ -143,7 +145,7 @@ class Image extends Component {
               : undefined
           }
         </span>
-      </span>
+      </div>
     );
   }
 }

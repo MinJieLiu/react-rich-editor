@@ -22,7 +22,6 @@
 
 .image-decorator {
   position: relative;
-  display: block;
 
   &:after {
     content: '';
@@ -31,6 +30,7 @@
   }
 
   &-wrapper {
+    position: relative;
     display: inline-block;
   }
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import draftToHtml from 'draftjs-to-html';
-// import draftToMarkdown from 'draftjs-to-markdown';
 import {
   convertFromHTML,
   convertToRaw,
